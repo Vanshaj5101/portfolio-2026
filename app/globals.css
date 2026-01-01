@@ -1,6 +1,20 @@
+@font-face {
+  font-family: 'PP Nikkei Journal';
+  src: url('/fonts/PPNikkeiJournal-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Typography - PP Nikkei Journal letter spacing */
+  --pp-nikkei-letter-spacing: 0.1rem;
+
+  /* Typography - Chivo Mono letter spacing */
+  --chivo-mono-letter-spacing: 0.2rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,10 +32,11 @@ body {
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #02142B 0%, #010812 100%);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 * {

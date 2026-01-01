@@ -1,0 +1,389 @@
+{
+  "skills": [
+    {
+      "id": 1,
+      "name": "Python",
+      "category": "Programming",
+      "description": "Built ETL pipelines, data validation scripts, and automation workflows",
+      "icon": "python"
+    },
+    {
+      "id": 2,
+      "name": "SQL",
+      "category": "Programming",
+      "description": "Wrote complex queries for data modeling, analytics, and reporting",
+      "icon": "sql"
+    },
+    {
+      "id": 3,
+      "name": "Java",
+      "category": "Programming",
+      "description": "Developed backend and data processing applications",
+      "icon": "java"
+    },
+    {
+      "id": 4,
+      "name": "JavaScript",
+      "category": "Programming",
+      "description": "Built web features and interactive dashboards",
+      "icon": "javascript"
+    },
+    {
+      "id": 5,
+      "name": "Tableau",
+      "category": "Visualization",
+      "description": "Created automated dashboards for self-service analytics",
+      "icon": "tableau"
+    },
+    {
+      "id": 6,
+      "name": "Power BI",
+      "category": "Visualization",
+      "description": "Built healthcare and financial analytics dashboards",
+      "icon": "powerbi"
+    },
+    {
+      "id": 7,
+      "name": "Looker Studio",
+      "category": "Visualization",
+      "description": "Delivered business dashboards using BigQuery data models",
+      "icon": "looker"
+    },
+    {
+      "id": 8,
+      "name": "Airflow",
+      "category": "Data Engineering",
+      "description": "Orchestrated scheduled ETL pipelines across cloud systems",
+      "icon": "airflow"
+    },
+    {
+      "id": 9,
+      "name": "Snowflake",
+      "category": "Data Engineering",
+      "description": "Performed cloud data transformations and analytics",
+      "icon": "snowflake"
+    },
+    {
+      "id": 10,
+      "name": "PySpark",
+      "category": "Data Engineering",
+      "description": "Processed large-scale datasets using distributed ETL pipelines",
+      "icon": "spark"
+    },
+    {
+      "id": 11,
+      "name": "ETL",
+      "category": "Data Engineering",
+      "description": "Designed end-to-end pipelines for ingestion, transformation, and delivery",
+      "icon": "etl"
+    },
+    {
+      "id": 12,
+      "name": "PostgreSQL",
+      "category": "Database",
+      "description": "Stored and queried transactional and analytics data",
+      "icon": "postgresql"
+    },
+    {
+      "id": 13,
+      "name": "AWS Redshift",
+      "category": "Database",
+      "description": "Modeled and queried large analytical datasets",
+      "icon": "redshift"
+    },
+    {
+      "id": 14,
+      "name": "BigQuery",
+      "category": "Database",
+      "description": "Built materialized views and analytics tables",
+      "icon": "bigquery"
+    },
+    {
+      "id": 15,
+      "name": "MongoDB",
+      "category": "Database",
+      "description": "Handled document-based data for application use cases",
+      "icon": "mongodb"
+    },
+    {
+      "id": 16,
+      "name": "AWS",
+      "category": "Cloud & DevOps",
+      "description": "Built serverless and scalable data applications",
+      "icon": "aws"
+    },
+    {
+      "id": 17,
+      "name": "GCP",
+      "category": "Cloud & DevOps",
+      "description": "Deployed data pipelines using BigQuery and Cloud services",
+      "icon": "gcp"
+    },
+    {
+      "id": 18,
+      "name": "Docker",
+      "category": "Cloud & DevOps",
+      "description": "Containerized data and AI applications for deployment",
+      "icon": "docker"
+    },
+    {
+      "id": 19,
+      "name": "CI/CD",
+      "category": "Cloud & DevOps",
+      "description": "Automated builds, testing, and deployments",
+      "icon": "cicd"
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "name": "Stark: AI Data Analyst",
+      "description": "RAG-based NLP data analyst that delivers insights to non-technical stakeholders through Slack. Reduces repetitive data requests by enabling self-service analytics for EdTech platforms.",
+      "link": "https://github.com/Vanshaj5101/Stark-Data-Analyst",
+      "category": ["ML & AI", "Cloud & Infrastructure"],
+      "tags": ["LLM", "Python", "Slack", "AWS", "Google Sheets"],
+      "images": ["/images/Stark.jpeg"],
+      "featured": true
+    },
+    {
+      "id": "proj-2",
+      "name": "Top 50 Highest Paid Athletes",
+      "description": "Interactive Tableau dashboard analyzing compensation trends across different sports. Features dynamic filtering and year-over-year comparisons.",
+      "link": "https://public.tableau.com/app/profile/vanshaj.gupta/viz/ForbesTop50HighestPaidAthletesMakeOverMonday/ForbesTop50Analysis",
+      "category": ["Data Visualization"],
+      "tags": ["Tableau", "Excel"],
+      "images": ["/images/Paid Athletes.jpeg"],
+      "featured": true
+    },
+    {
+      "id": "proj-3",
+      "name": "FaceNet : Face Recognition System",
+      "description": "Serverless AWS pipeline processing IoT camera feeds with Lambda, EC2 Auto Scaling, and SQS, achieving 98% face detection accuracy. Enables real-time security monitoring and perimeter surveillance.",
+      "category": ["ML & AI", "Cloud & Infrastructure"],
+      "tags": ["AWS", "Python"],
+      "images": ["/images/Face Recognition.jpeg"],
+      "featured": false
+    },
+    {
+      "id": "proj-4",
+      "name": "HR Analytics Dashboard",
+      "description": "Interactive Tableau dashboard analyzing employee attrition patterns across departments, education levels, age groups, and job satisfaction ratings.",
+      "category": ["Data Visualization"],
+      "tags": ["Tableau", "Excel"],
+      "images": ["/images/HR Analytics.jpeg"],
+      "featured": false,
+      "link": "https://public.tableau.com/app/profile/vanshaj.gupta/viz/HRAnalyticsDashboard_17046972780240/HRAnalyticsDashboard"
+    },
+    {
+      "id": "proj-5",
+      "name": "Super Store Sales Report",
+      "description": "Power BI dashboard analyzing $2M in sales across regions, payment modes, and product categories for 2019-20. Visualizes geographic distribution, monthly trends, and profitability metrics.",
+      "category": ["Data Visualization"],
+      "tags": ["Power BI", "Excel"],
+      "images": ["/images/Super Store.jpeg"],
+      "featured": false,
+      "link": "https://github.com/Vanshaj5101/SuperStore-Sales-Data"
+    },
+    {
+      "id": "proj-6",
+      "name": "The Godfather of Cinema",
+      "description": "Tableau visualization exploring Al Pacino's legendary film career, tracking box office performance, Oscar nominations, and critically acclaimed roles.",
+      "category": ["Data Visualization"],
+      "tags": ["Tableau"],
+      "images": ["/images/Al Pacino.jpeg"],
+      "featured": false,
+      "link": "https://public.tableau.com/app/profile/vanshaj.gupta/viz/TheGodfatherofCinemaAlPacinosLegacyDataPlusMovies/AlPacinosLegacy"
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "role": "Business and Data Analyst II",
+      "company": "Arizona State University, Learning Enterprise",
+      "location": "Tempe, Arizona",
+      "period": "Jun 2025 - Present",
+      "duration": "7 months",
+      "image": "/images/asu.png",
+      "kpis": [
+        {
+          "label": "Time Savings",
+          "value": "30+",
+          "description": "Hours Saved Per Term"
+        },
+        {
+          "label": "Invoice Accuracy",
+          "value": "75%",
+          "description": "Reduction in Invoice Errors"
+        },
+        {
+          "label": "Automation",
+          "value": "4+",
+          "description": "Dashboards Powered by Automated ETL Pipelines"
+        }
+      ],
+      "description": [
+        "Automated feedback data processing for 60+ courses by designing an ETL pipeline with Apache Airflow, Python and Google Cloud to ingest API data into BigQuery, saving the design team 30+ hours per term",
+        "Collaborated with 7+ clients to improve revenue reporting by developing end-to-end Alteryx workflow, reducing invoice errors by 75% and manual reporting efforts by 95%",
+        "Led data architecture design by creating materialized views and data models in BigQuery using SQL, enabling 4+ Looker Studio dashboards that improved business intelligence reporting and decision-making"
+      ],
+      "skills": [
+        "Python",
+        "Apache Airflow",
+        "BigQuery",
+        "Looker Studio",
+        "SQL",
+        "Alteryx",
+        "Google Cloud"
+      ]
+    },
+    {
+      "id": 2,
+      "role": "Data Engineer",
+      "company": "Arizona State University, Learning Enterprise",
+      "location": "Tempe, Arizona",
+      "period": "Jan 2024 - Jun 2025",
+      "duration": "1 year 6 months",
+      "image": "/images/asu.png",
+      "kpis": [
+        {
+          "label": "Data Modeling",
+          "value": "300K+",
+          "description": "Salesforce Records Processed"
+        },
+        {
+          "label": "Dashboards",
+          "value": "12+",
+          "description": "Tableau & Looker Dashboards"
+        },
+        {
+          "label": "Efficiency",
+          "value": "65%",
+          "description": "Reduction in Data Requests"
+        }
+      ],
+      "description": [
+        "Performed data modeling on 300K+ Salesforce records in AWS Redshift using Airflow and Python, automating weekly pipelines that reduced operational cost and produced 4+ customized files to support team OKR reporting",
+        "Enabled self-service analytics for 7+ cross-functional teams by building 12+ Tableau and Looker Studio dashboards with automated refresh schedules and interactive data visualizations, decreasing monthly data team requests by 65%",
+        "Contributed to data architecture by migrating 8+ database tables from Star Schema to Relational Schema in AWS Redshift",
+        "Improved data quality by developing Python and SQL validation scripts on AWS Redshift and PostgreSQL, reducing incorrect insights and system failures by 70%, while strengthening data governance through code reviews and schema documentation",
+        "Accelerated monthly and quarterly reporting cycles by automating 30+ business intelligence reports across Salesforce, Excel, and Google Sheets, providing stakeholders with timely actionable insights to guide business decisions"
+      ],
+      "skills": [
+        "Python",
+        "Apache Airflow",
+        "AWS Redshift",
+        "PostgreSQL",
+        "Tableau",
+        "Looker Studio",
+        "SQL",
+        "Salesforce"
+      ]
+    },
+    {
+      "id": 3,
+      "role": "Data Engineer Intern",
+      "company": "GCS Medical College, Hospital and Research Centre",
+      "location": "Gujarat, India",
+      "period": "Feb 2023 - Apr 2023",
+      "duration": "3 months",
+      "image": "/images/gcs.jpg",
+      "kpis": [
+        {
+          "label": "Analytics Impact",
+          "value": "90%",
+          "description": "Report Generation Time Reduced"
+        },
+        {
+          "label": "Patient Engagement",
+          "value": "25%",
+          "description": "Increase via Targeted Campaigns"
+        },
+        {
+          "label": "Revenue Reporting",
+          "value": "100+",
+          "description": "Clients Served Across 20+ Services"
+        }
+      ],
+      "description": [
+        "Built end-to-end self-service analytics infrastructure from ground zero, replacing manual Excel-based reporting with automated ETL pipelines using Apache Airflow and Python, processing 500K+ electronic health records and reducing report generation time by 90%",
+        "Supported targeted healthcare campaigns by developing demographic-based Power BI dashboards with SQL DirectQuery, increasing patient engagement by 25% and expanding reach across 10K+ patients",
+        "Delivered financial analytics dashboard in Power BI tracking revenue across 100+ clients and 20+ service lines, empowering finance and operations teams with automated dashboards for quarterly strategic planning"
+      ],
+      "skills": [
+        "Python",
+        "Apache Airflow",
+        "PostgreSQL",
+        "Power BI",
+        "SQL",
+        "ETL"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "id": 1,
+      "role": "Business and Data Analyst II",
+      "company": "Arizona State University, Learning Enterprise",
+      "location": "Tempe, Arizona",
+      "startDate": "2025-06",
+      "endDate": "Present",
+      "startYear": 2025.42,
+      "endYear": 2025.96,
+      "duration": "7 months",
+      "type": "experience",
+      "description": "Automated feedback data processing, developed ETL pipelines, and created Looker Studio dashboards"
+    },
+    {
+      "id": 2,
+      "role": "Data Engineer",
+      "company": "Arizona State University, Learning Enterprise",
+      "location": "Tempe, Arizona",
+      "startDate": "2024-01",
+      "endDate": "2025-06",
+      "startYear": 2024.0,
+      "endYear": 2025.42,
+      "duration": "1 year 6 months",
+      "type": "experience",
+      "description": "Performed data modeling on 300K+ Salesforce records, built 12+ dashboards, migrated database schemas"
+    },
+    {
+      "id": 3,
+      "role": "Masters of Computer Science",
+      "company": "Arizona State University",
+      "location": "United States",
+      "startDate": "2023-08",
+      "endDate": "2025-05",
+      "startYear": 2023.58,
+      "endYear": 2025.33,
+      "duration": "1 year 9 months",
+      "type": "education",
+      "gpa": "4.0/4.0"
+    },
+    {
+      "id": 4,
+      "role": "Data Engineer",
+      "company": "GCS Medical College, Hospital and Research Centre",
+      "location": "Gujarat, India",
+      "startDate": "2023-02",
+      "endDate": "2023-04",
+      "startYear": 2023.08,
+      "endYear": 2023.25,
+      "duration": "3 months",
+      "type": "experience",
+      "description": "Automated ETL workflows with Apache Airflow, developed Power BI dashboards for healthcare analytics"
+    },
+    {
+      "id": 5,
+      "role": "Bachelor of Engineering in Computer Engineering",
+      "company": "Gujarat Technological University",
+      "location": "India",
+      "startDate": "2019-06",
+      "endDate": "2023-06",
+      "startYear": 2019.42,
+      "endYear": 2023.42,
+      "duration": "4 years",
+      "type": "education",
+      "gpa": "3.7/4.0"
+    }
+  ]
+}

@@ -1,0 +1,1259 @@
+/* Portfolio Section - Main container */
+.portfolioSection {
+  position: relative;
+  min-height: 100vh;
+  margin-top: calc(100vh - 450px);
+  padding: 2rem 10rem 10rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Portfolio Box - Dashboard container */
+.portfolioBox {
+  width: 100%;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  border: 10px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  min-height: 830px;
+  display: flex;
+}
+
+/* Sidebar - Left navigation panel */
+.sidebar {
+  width: 280px;
+  background-color: transparent;
+  padding: 1rem 0.5rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* Sidebar Header */
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+/* Dashboard Logo */
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  background-color: #02142B;
+  color: #82FF82;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'PP Nikkei Journal', var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Logo Text - Name next to logo */
+.logoText {
+  font-family: 'PP Nikkei Journal', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #02142B;
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+/* Sidebar Navigation - Menu items container */
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+/* Sidebar Navigation Item */
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.75rem 0.75rem 0.5rem;
+  text-align: left;
+  background: none;
+  border: none;
+  font-family: 'PP Nikkei Journal', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(2, 20, 43, 0.6);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+.navItem svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.navItem:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #02142B;
+}
+
+/* Active Navigation Item */
+.navItemActive {
+  color: #02142B;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-left: -0.25rem;
+  padding-left: 0.75rem;
+}
+
+/* Sidebar Footer - Bottom section */
+.sidebarFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  position: relative;
+}
+
+/* Let's Connect Button */
+.connectButton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  padding: 0.0rem 0.75rem 0.75rem 0.5rem;
+  background: none;
+  border: none;
+  font-family: 'PP Nikkei Journal', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(2, 20, 43, 0.7);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  text-align: left;
+  width: 100%;
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+.connectButton svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.connectButton:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #02142B;
+}
+
+/* Social Links Dropdown */
+.socialLinksDropdown {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
+  padding: 0.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid rgba(220, 220, 220, 0.6);
+}
+
+/* Social Link Item */
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem 0.5rem 0.5rem;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(2, 20, 43, 0.7);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.socialLink:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #02142B;
+}
+
+.socialLink svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+/* Main Content Area - Right panel */
+.mainContent {
+  flex: 1;
+  background-color: #FFFFFF;
+  margin: 0rem 0.5rem 0.5rem 0;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  height: calc(830px - 1rem);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content Header - Top section with greeting */
+.contentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+/* Header Left - Greeting and section title */
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* Personalized Greeting */
+.contentHeader .greeting {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #02142B;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Section Title - SUMMARY, SKILLS, etc */
+.sectionTitle {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(2, 20, 43, 0.5);
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+/* Social Buttons - Header right icons */
+.socialButtons {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding-top: 0.125rem;
+}
+
+/* Social Button Icon */
+.socialButton {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  border-radius: 50%;
+  color: rgba(2, 20, 43, 0.7);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.socialButton:hover {
+  background-color: #02142B;
+  color: #82FF82;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.socialButton svg {
+  flex-shrink: 0;
+}
+
+/* KPI Cards - Summary section metrics */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 1rem 0rem 0rem;
+}
+
+.kpiCard {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(220, 220, 220, 0.6);
+  transition: all 0.3s ease;
+}
+
+.kpiCard:hover {
+  border: 1px solid rgba(2, 20, 43, 0.3);
+}
+
+.kpiTitle {
+  font-family: var(--font-chivo-mono), 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(2, 20, 43, 0.6);
+  margin: 0 0 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: var(--chivo-mono-letter-spacing);
+}
+
+.kpiValue {
+  font-family: var(--font-chivo-mono), 'Courier New', monospace;
+  font-size: 48px;
+  font-weight: 500;
+  color: #02142B;
+  margin: 1.5rem 0 1rem 0;
+  line-height: 1;
+  letter-spacing: var(--chivo-mono-letter-spacing);
+}
+
+.kpiDescription {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(2, 20, 43, 0.4);
+  margin: 0.5rem 0rem 0rem 0rem;
+  line-height: 1.5;
+  letter-spacing: var(--pp-nikkei-letter-spacing)
+}
+
+/* Journey Section - Gantt chart container */
+.journeySection {
+  margin-top: 1rem;
+  padding: 2rem;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid rgba(220, 220, 220, 0.6);
+}
+
+.journeySection:hover {
+  border: 1px solid rgba(2, 20, 43, 0.3);
+}
+
+/* Journey Header */
+.journeyHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.journeyTitle {
+  font-family: var(--font-chivo-mono), 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(2, 20, 43, 0.6);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: var(--chivo-mono-letter-spacing);
+}
+
+/* Journey Legend */
+.journeyLegend {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-chivo-mono), 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.7);
+  letter-spacing: var(--chivo-mono-letter-spacing);
+}
+
+.legendDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legendEducation {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.legendExperience {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+/* Gantt Chart - Timeline visualization */
+.ganttChart {
+  position: relative;
+  padding: 0.5rem 0;
+  width: 100%;
+  max-height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ganttBody {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 0.5rem;
+}
+
+.ganttRow {
+  position: relative;
+}
+
+.ganttTrack {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(
+    to right,
+    transparent calc(100% / 8 - 1px),
+    rgba(220, 220, 220, 0.3) calc(100% / 8 - 1px),
+    rgba(220, 220, 220, 0.3) calc(100% / 8),
+    transparent calc(100% / 8)
+  );
+  background-size: 12.5% 100%;
+  border-radius: 4px;
+}
+
+/* Gantt Footer - Year labels */
+.ganttFooter {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0;
+  padding: 0.75rem 0 0 0;
+  border-top: 2px solid rgba(2, 20, 43, 0.2);
+  flex-shrink: 0;
+}
+
+.ganttYear {
+  font-family: var(--font-chivo-mono), 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(2, 20, 43, 0.7);
+  text-align: center;
+  padding: 0.25rem 0;
+  letter-spacing: var(--chivo-mono-letter-spacing);
+}
+
+/* Gantt Bars - Timeline bars for education/experience */
+.ganttBarEducation,
+.ganttBarExperience {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: calc((var(--start) - 2019) / 7 * 100%);
+  width: calc((var(--end) - var(--start)) / 7 * 100%);
+  height: 46px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem 0.75rem;
+  gap: 0.15rem;
+}
+
+.ganttBarEducation {
+  background-color: #82FF82;
+}
+
+.ganttBarExperience {
+  background-color: #02142B;
+}
+
+.ganttBarContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.ganttBarLabel {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #02142B;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ganttBarExperience .ganttBarLabel {
+  color: #FFFFFF;
+}
+
+.ganttBarDates {
+  font-family: var(--font-chivo-mono), 'Courier New', monospace;
+  font-size: 9px;
+  font-weight: 500;
+  color: rgba(2, 20, 43, 0.8);
+  white-space: nowrap;
+  letter-spacing: var(--chivo-mono-letter-spacing);
+}
+
+.ganttBarExperience .ganttBarDates {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.ganttBarEducation:hover,
+.ganttBarExperience:hover {
+  transform: translateY(-50%) scale(1.02);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+}
+
+.ganttBarEducation:hover .ganttTooltip,
+.ganttBarExperience:hover .ganttTooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Gantt Tooltip - Hover details */
+.ganttTooltip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #02142B;
+  color: #FFFFFF;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.ganttTooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #02142B;
+}
+
+.tooltipRole {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 0.25rem;
+  color: #82FF82;
+}
+
+.tooltipCompany {
+  font-weight: 500;
+  margin-bottom: 0.15rem;
+}
+
+.tooltipLocation {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.25rem;
+}
+
+.tooltipDuration {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-chivo-mono), 'Courier New', monospace;
+  letter-spacing: var(--chivo-mono-letter-spacing);
+}
+
+/* Gantt Bar Pattern - Current position indicator */
+.ganttBarPattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 4px,
+    rgba(255, 255, 255, 0.3) 4px,
+    rgba(255, 255, 255, 0.3) 8px
+  );
+  z-index: 1;
+}
+
+/* Skills Section */
+.skillsSection {
+  margin-top: 1rem;
+}
+
+/* Skills Filter Buttons */
+.skillsFilters {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filterButton {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(220, 220, 220, 0.6);
+  border-radius: 20px;
+  color: rgba(2, 20, 43, 0.6);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+.filterButton:hover {
+  border-color: rgba(2, 20, 43, 0.3);
+  color: #02142B;
+  background-color: rgba(2, 20, 43, 0.02);
+}
+
+.filterButtonActive {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #02142B;
+  border-color: rgba(2, 20, 43, 0.3);
+}
+
+.filterButtonActive:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #02142B;
+}
+
+/* Skills Scroller - Grid container */
+.skillsScroller {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  overflow-y: auto;
+  max-height: 600px;
+  padding-right: 0.5rem;
+}
+
+.skillsScroller::-webkit-scrollbar {
+  width: 6px;
+}
+
+.skillsScroller::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.skillsScroller::-webkit-scrollbar-thumb {
+  background: rgba(2, 20, 43, 0.2);
+  border-radius: 3px;
+}
+
+.skillsScroller::-webkit-scrollbar-thumb:hover {
+  background: rgba(2, 20, 43, 0.3);
+}
+
+/* Skill Card */
+.skillCard {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(220, 220, 220, 0.6);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.skillCard:hover {
+  border: 1px solid rgba(2, 20, 43, 0.3);
+}
+
+.skillHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.skillIcon {
+  width: 48px;
+  height: 48px;
+  background-color: #02142B;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.skillIconText {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 24px;
+  font-weight: 600;
+  color: #82FF82;
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+.skillName {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 16px;
+  font-weight: 600;
+  color: #02142B;
+  margin: 0;
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+.skillDescription {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(2, 20, 43, 0.6);
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+/* Projects Section */
+.projectsSection {
+  margin-top: 1rem;
+}
+
+/* Projects Grid */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  overflow-y: auto;
+  max-height: 600px;
+  padding-right: 0.5rem;
+}
+
+.projectsGrid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.projectsGrid::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.projectsGrid::-webkit-scrollbar-thumb {
+  background: rgba(2, 20, 43, 0.2);
+  border-radius: 3px;
+}
+
+.projectsGrid::-webkit-scrollbar-thumb:hover {
+  background: rgba(2, 20, 43, 0.3);
+}
+
+/* Project Card */
+.projectCard {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(220, 220, 220, 0.6);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.projectCard:hover {
+  border: 1px solid rgba(2, 20, 43, 0.3);
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="%2302142B" fill-opacity="0.9"/><path d="M19 29L29 19M29 19H21M29 19V27" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') 24 24, pointer;
+}
+
+.projectImage {
+  width: 100%;
+  height: 200px;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  position: relative;
+  padding: 0.3rem;
+}
+
+.projectImageContent {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 12px;
+}
+
+.projectContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.projectTitle {
+  font-family: var(--font-chivo-mono), 'Courier New', monospace;
+  font-size: 18px;
+  font-weight: 600;
+  color: #02142B;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: var(--chivo-mono-letter-spacing);
+}
+
+.projectDescription {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(2, 20, 43, 0.6);
+  margin: 0;
+  line-height: 1.6;
+  flex: 1;
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+.projectSkills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Skill Chip - Used in projects and experience */
+.skillChip {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 0.375rem 0.75rem;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(220, 220, 220, 0.6);
+  color: #000000;
+  border-radius: 12px;
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+/* Experience Section */
+.experienceSection {
+  margin-top: 1rem;
+}
+
+.experienceContainer {
+  display: flex;
+  gap: 2rem;
+  height: 100%;
+}
+
+/* Experience Navigation - Left sidebar */
+.experienceNav {
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  overflow-y: auto;
+  max-height: 600px;
+  padding-right: 0.5rem;
+}
+
+.experienceNav::-webkit-scrollbar {
+  width: 6px;
+}
+
+.experienceNav::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.experienceNav::-webkit-scrollbar-thumb {
+  background: rgba(2, 20, 43, 0.2);
+  border-radius: 3px;
+}
+
+.experienceNav::-webkit-scrollbar-thumb:hover {
+  background: rgba(2, 20, 43, 0.3);
+}
+
+.expNavItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.75rem 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.expNavItem:hover .expNavRole {
+  opacity: 0.8;
+}
+
+.expNavItemActive .expNavRole {
+  opacity: 1 !important;
+}
+
+.expNavRole {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: 500;
+  color: #02142B;
+  opacity: 0.4;
+  line-height: 1.3;
+  transition: opacity 0.2s ease;
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+.expNavCompany {
+  display: none;
+}
+
+/* Experience Scroller - Main content area */
+.experienceContent {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 600px;
+  padding-right: 0.5rem;
+}
+
+.experienceContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.experienceContent::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.experienceContent::-webkit-scrollbar-thumb {
+  background: rgba(2, 20, 43, 0.2);
+  border-radius: 3px;
+}
+
+.experienceContent::-webkit-scrollbar-thumb:hover {
+  background: rgba(2, 20, 43, 0.3);
+}
+
+/* Experience Card */
+.experienceCard {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(220, 220, 220, 0.6);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.experienceCard:hover {
+    border: 1px solid rgba(2, 20, 43, 0.3);
+}
+
+/* Experience Card Header */
+.expHeader {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.expImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.expImageContent {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.expHeaderInfo {
+  flex: 1;
+}
+
+.expRole {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 20px;
+  font-weight: 600;
+  color: #02142B;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+.expCompany {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(2, 20, 43, 0.7);
+  margin: 0 0 0.75rem 0;
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+.expMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 13px;
+  color: rgba(2, 20, 43, 0.5);
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+.expLocation,
+.expPeriod {
+  font-weight: 400;
+}
+
+.expDivider {
+  color: rgba(2, 20, 43, 0.3);
+}
+
+/* Experience KPI Cards */
+.expKpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.expKpiCard {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(220, 220, 220, 0.6);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.expKpiLabel {
+  font-family: var(--font-chivo-mono), 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(2, 20, 43, 0.5);
+  text-transform: uppercase;
+  letter-spacing: var(--chivo-mono-letter-spacing);
+}
+
+.expKpiValue {
+  font-family: var(--font-chivo-mono), 'Courier New', monospace;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem 0;
+  color: #02142B;
+  line-height: 1;
+  letter-spacing: var(--chivo-mono-letter-spacing);
+}
+
+.expKpiDesc {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(2, 20, 43, 0.4);
+  line-height: 1.3;
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+/* Experience Description Section */
+.expDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.expDescTitle {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(2, 20, 43, 0.6);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+.expDescList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.expDescItem {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(2, 20, 43, 0.7);
+  line-height: 1.6;
+  padding-left: 1.5rem;
+  position: relative;
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+.expDescItem::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #000000;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* Experience Skills Section */
+.expSkills {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.expSkillsTitle {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(2, 20, 43, 0.6);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: var(--pp-nikkei-letter-spacing);
+}
+
+.expSkillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Footer Section */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 10rem;
+  margin-top: -6rem;
+  min-height: 30vh;
+  position: relative;
+}
+
+.approachImage {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Contact Section */
+.contactSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0 0;
+  overflow: visible;
+  min-height: 25vh;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 1.5rem;
+}
+
+.socialIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.socialIcon svg {
+  fill: white;
+}
+
+.socialIcon:hover {
+  background-color: rgba(130, 255, 130, 0.15);
+  transform: translateY(-4px);
+}
+
+.dividerLine {
+  width: calc(100vw - 30rem);
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.copyrightText {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 1.5rem;
+}
+
+.copyrightText p {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 14px;
+  color: rgba(213, 220, 231, 0.6);
+  margin: 0.5rem 0;
+  font-weight: 400;
+}
+
+/* Radial Glow Effect */
+.radialGlow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 500px;
+  background: radial-gradient(ellipse 1200px 200px at 50% 100%, rgba(130, 255, 130, 0.5) 0%, rgba(130, 255, 130, 0.25) 25%, rgba(130, 255, 130, 0.1) 50%, transparent 75%);
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+  }
+}

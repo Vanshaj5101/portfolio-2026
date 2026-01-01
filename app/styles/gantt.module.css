@@ -1,0 +1,186 @@
+/* Gantt Chart Container */
+.ganttContainer {
+  width: 100%;
+  padding: 0;
+  overflow: visible;
+  min-height: 340px;
+  background-color: transparent;
+}
+
+.ganttWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  padding: 0;
+  background-color: transparent;
+}
+
+/* Bars Container */
+.barsContainer {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  margin-bottom: 2.5rem;
+  background-color: transparent;
+}
+
+.barWrapper {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  left: 0;
+}
+
+/* Bar Styles */
+.bar {
+  position: absolute;
+  height: 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  z-index: 2;
+  top: 0;
+  opacity: 1;
+}
+
+.bar:hover {
+  height: 14px;
+  top: -1px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.barEducation {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.barWork {
+  background-color: rgba(0, 0, 0, 1) !important;
+}
+
+/* Label Styles */
+.label {
+  position: absolute;
+  top: 18px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.labelTitle {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  line-height: 1.2;
+}
+
+.labelDate {
+  font-family: var(--font-chivo-mono), 'Courier New', monospace;
+  font-size: 10px;
+  opacity: 0.7;
+  letter-spacing: var(--chivo-mono-letter-spacing);
+  line-height: 1.2;
+}
+
+.labelEducation .labelTitle {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.labelWork .labelTitle {
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+.labelEducation .labelDate {
+  color: rgba(0, 0, 0, 0.6) !important;
+  opacity: 0.8 !important;
+}
+
+.labelWork .labelDate {
+  color: rgba(0, 0, 0, 1) !important;
+  opacity: 0.7 !important;
+}
+
+/* X-Axis */
+.xAxis {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 50px;
+}
+
+.axisLine {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(2, 20, 43, 0.15);
+  top: 0;
+}
+
+/* Year Markers */
+.yearMarker {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.yearTick {
+  width: 1px;
+  height: 8px;
+  background-color: rgba(2, 20, 43, 0.25);
+}
+
+.yearLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(2, 20, 43, 0.6);
+  text-align: center;
+  margin-top: 8px;
+  font-family: var(--font-chivo-mono), 'Courier New', monospace;
+  letter-spacing: var(--chivo-mono-letter-spacing);
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+  .barsContainer {
+    height: 280px;
+  }
+
+  .labelTitle {
+    font-size: 12px;
+  }
+
+  .labelDate {
+    font-size: 9px;
+  }
+
+  .yearLabel {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .barsContainer {
+    height: 260px;
+  }
+
+  .labelTitle {
+    font-size: 11px;
+  }
+
+  .labelDate {
+    font-size: 8px;
+  }
+
+  .yearLabel {
+    font-size: 10px;
+  }
+
+  .bar {
+    height: 8px;
+  }
+}

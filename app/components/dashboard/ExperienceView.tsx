@@ -14,7 +14,9 @@ export default function ExperienceView() {
     const container = e.currentTarget;
     const cards = Array.from(container.querySelectorAll<HTMLElement>('[data-exp-id]'));
 
-    let closestCard: HTMLElement | null = null;
+    if (cards.length === 0) return;
+
+    let closestCard = cards[0];
     let closestDistance = Infinity;
 
     cards.forEach((card) => {
@@ -28,10 +30,8 @@ export default function ExperienceView() {
       }
     });
 
-    if (closestCard) {
-      const expId = parseInt(closestCard.getAttribute('data-exp-id') || '1');
-      setActiveExperience(expId);
-    }
+    const expId = parseInt(closestCard.getAttribute('data-exp-id') || '1');
+    setActiveExperience(expId);
   };
 
   const scrollToExperience = (expId: number) => {

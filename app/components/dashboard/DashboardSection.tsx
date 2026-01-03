@@ -3,28 +3,24 @@
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import dashboardStyles from '../../styles/dashboard.module.css';
-import SummaryView from './SummaryView';
+import ProfileView from './SummaryView';
 import SkillsView from './SkillsView';
 import ExperienceView from './ExperienceView';
 import ProjectsView from './ProjectsView';
 import { usePersonalizedGreeting } from '../../utils/usePersonalizedGreeting';
 import {
-  FaUser,
-  FaBriefcase,
-  FaFolder,
-  FaHome,
-  FaUsers,
-  FaChevronUp,
-  FaLinkedin,
-  FaGithub,
-  FaEnvelope,
-  FaFileAlt
-} from 'react-icons/fa';
+  User,
+  Briefcase,
+  FolderOpen,
+  Sparkles,
+  Mail,
+  FileText
+} from 'lucide-react';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { SiTableau } from 'react-icons/si';
 
 export default function DashboardSection() {
-  const [activeSection, setActiveSection] = useState('Summary');
-  const [showSocialLinks, setShowSocialLinks] = useState(false);
+  const [activeSection, setActiveSection] = useState('Profile');
   const [buttonOpacity, setButtonOpacity] = useState(1);
   const { greetingParts } = usePersonalizedGreeting();
   const sectionRef = useRef<HTMLElement>(null);
@@ -88,12 +84,12 @@ export default function DashboardSection() {
         <div className={dashboardStyles.mobileTopNav}>
           <div className={dashboardStyles.mobileNavContainer}>
             <button
-              onClick={() => setActiveSection('Summary')}
+              onClick={() => setActiveSection('Profile')}
               className={`${dashboardStyles.mobileNavItem} ${
-                activeSection === 'Summary' ? dashboardStyles.active : ''
+                activeSection === 'Profile' ? dashboardStyles.active : ''
               }`}
             >
-              Summary
+              Profile
             </button>
             <button
               onClick={() => setActiveSection('Experience')}
@@ -127,8 +123,8 @@ export default function DashboardSection() {
               <Image
                 src="/images/fav.png"
                 alt="Vanshaj Gupta"
-                width={60}
-                height={60}
+                width={42}
+                height={42}
                 style={{ borderRadius: '8px' }}
               />
             </div>
@@ -137,13 +133,13 @@ export default function DashboardSection() {
 
           <nav className={dashboardStyles.navigation}>
             <button
-              onClick={() => setActiveSection('Summary')}
+              onClick={() => setActiveSection('Profile')}
               className={`${dashboardStyles.navItem} ${
-                activeSection === 'Summary' ? dashboardStyles.navItemActive : ''
+                activeSection === 'Profile' ? dashboardStyles.navItemActive : ''
               }`}
             >
-              <FaUser size={18} />
-              <span>Summary</span>
+              <User size={24} strokeWidth={activeSection === 'Profile' ? 2 : 1.5} />
+              <span>Profile</span>
             </button>
             <button
               onClick={() => setActiveSection('Experience')}
@@ -151,7 +147,7 @@ export default function DashboardSection() {
                 activeSection === 'Experience' ? dashboardStyles.navItemActive : ''
               }`}
             >
-              <FaBriefcase size={18} />
+              <Briefcase size={24} strokeWidth={activeSection === 'Experience' ? 2 : 1.5} />
               <span>Experience</span>
             </button>
             <button
@@ -160,7 +156,7 @@ export default function DashboardSection() {
                 activeSection === 'Projects' ? dashboardStyles.navItemActive : ''
               }`}
             >
-              <FaFolder size={18} />
+              <FolderOpen size={24} strokeWidth={activeSection === 'Projects' ? 2 : 1.5} />
               <span>Projects</span>
             </button>
             <button
@@ -169,79 +165,14 @@ export default function DashboardSection() {
                 activeSection === 'Skills' ? dashboardStyles.navItemActive : ''
               }`}
             >
-              <FaHome size={18} />
+              <Sparkles size={24} strokeWidth={activeSection === 'Skills' ? 2 : 1.5} />
               <span>Skills</span>
             </button>
           </nav>
-
-          <div className={dashboardStyles.sidebarFooter}>
-            <button
-              onClick={() => setShowSocialLinks(!showSocialLinks)}
-              className={dashboardStyles.connectButton}
-            >
-              <FaUsers size={18} />
-              <span>Let&apos;s Connect!!!</span>
-              <FaChevronUp
-                size={16}
-                style={{
-                  marginLeft: 'auto',
-                  transform: showSocialLinks ? 'rotate(180deg)' : 'rotate(0deg)',
-                  transition: 'transform 0.2s ease'
-                }}
-              />
-            </button>
-
-            {showSocialLinks && (
-              <div className={dashboardStyles.socialLinksDropdown}>
-                <a
-                  href="https://drive.google.com/file/d/1I59cGZKu6dnwFvqWMydJRNRqbBNBfIiv/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={dashboardStyles.socialLink}
-                >
-                  <FaFileAlt size={18} />
-                  <span>Resume</span>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/vanshajgupta/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={dashboardStyles.socialLink}
-                >
-                  <FaLinkedin size={18} />
-                  <span>LinkedIn</span>
-                </a>
-                <a
-                  href="mailto:gupta.vanshaj05@gmail.com"
-                  className={dashboardStyles.socialLink}
-                >
-                  <FaEnvelope size={18} />
-                  <span>Email</span>
-                </a>
-                <a
-                  href="https://public.tableau.com/app/profile/vanshaj.gupta/vizzes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={dashboardStyles.socialLink}
-                >
-                  <SiTableau size={18} />
-                  <span>Tableau</span>
-                </a>
-                <a
-                  href="https://github.com/Vanshaj5101"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={dashboardStyles.socialLink}
-                >
-                  <FaGithub size={18} />
-                  <span>Github</span>
-                </a>
-              </div>
-            )}
-          </div>
         </div>
-        <div className={dashboardStyles.mainContent}>
-          <div className={dashboardStyles.contentHeader}>
+        <div className={dashboardStyles.mainContentWrapper}>
+          <div className={dashboardStyles.mainContent}>
+            <div className={dashboardStyles.contentHeader}>
             <div className={dashboardStyles.headerLeft}>
               <h2 className={dashboardStyles.greeting}>
                 <span style={{ opacity: 0.4 }}>{greetingParts.text}</span>
@@ -249,7 +180,7 @@ export default function DashboardSection() {
                 <span style={{ opacity: 1.0 }}>{greetingParts.punctuation}</span>
               </h2>
               <span className={dashboardStyles.sectionTitle}>
-                {activeSection === 'Summary' && 'SUMMARY'}
+                {activeSection === 'Profile' && 'PROFILE'}
                 {activeSection === 'Skills' && 'TECHNICAL SKILLS'}
                 {activeSection === 'Experience' && 'EXPERIENCE'}
                 {activeSection === 'Projects' && 'PROJECTS'}
@@ -290,22 +221,23 @@ export default function DashboardSection() {
                 className={dashboardStyles.socialButton}
                 aria-label="Resume"
               >
-                <FaFileAlt size={20} />
+                <FileText size={20} strokeWidth={1.5} />
               </a>
               <a
                 href="mailto:gupta.vanshaj05@gmail.com"
                 className={dashboardStyles.socialButton}
                 aria-label="Email"
               >
-                <FaEnvelope size={20} />
+                <Mail size={20} strokeWidth={1.5} />
               </a>
             </div>
           </div>
 
-          {activeSection === 'Summary' && <SummaryView />}
+          {activeSection === 'Profile' && <ProfileView />}
           {activeSection === 'Skills' && <SkillsView />}
           {activeSection === 'Experience' && <ExperienceView />}
           {activeSection === 'Projects' && <ProjectsView />}
+          </div>
         </div>
       </div>
     </section>

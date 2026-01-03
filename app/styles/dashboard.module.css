@@ -27,10 +27,8 @@
   width: 100%;
   max-width: 1620px;
   height: 1029px;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  border: 11px solid rgba(0, 0, 0, 0.3);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: #f2f2f2;
+  border-radius: 24px;
   opacity: 1;
   display: flex;
   box-sizing: border-box;
@@ -79,9 +77,10 @@
 
 /* Sidebar - Left navigation panel */
 .sidebar {
-  width: clamp(220px, 18vw, 280px); /* Responsive width */
+  width: 13vw; /* 250px equivalent as viewport width percentage */
+  min-width: 250px; /* Minimum width to maintain readability */
   background-color: transparent;
-  padding: 1rem 1rem;
+  padding: 2rem 1rem 1rem;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -93,14 +92,15 @@
 .sidebarHeader {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 3rem;
+  padding: 4px;
+  gap: 12px;
+  margin-bottom: 4rem;
 }
 
 /* Dashboard Logo */
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 42px;
+  height: 42px;
   border-radius: 8px;
   background-color: #02142B;
   color: #82FF82;
@@ -115,17 +115,17 @@
 /* Logo Text - Name next to logo */
 .logoText {
   font-family: 'PP Nikkei Journal', system-ui, sans-serif;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 600;
   color: #02142B;
-  letter-spacing: var(--pp-nikkei-letter-spacing);
+  letter-spacing: 0.02rem;
 }
 
 /* Sidebar Navigation - Menu items container */
 .navigation {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 12px;
   flex: 1;
 }
 
@@ -133,25 +133,26 @@
 .navItem {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 0.75rem 0.75rem 0.5rem;
+  gap: 12px;
+  padding: 8px 12px;
   text-align: left;
   background: none;
   border: none;
   font-family: 'PP Nikkei Journal', system-ui, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   color: rgba(2, 20, 43, 0.6);
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 6px;
   transition: all 0.2s ease;
-  letter-spacing: var(--pp-nikkei-letter-spacing);
+  letter-spacing: 0.02rem;
+  height: auto; /* Hug content */
 }
 
 .navItem svg {
   flex-shrink: 0;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
 }
 
 .navItem:hover {
@@ -163,100 +164,24 @@
 .navItemActive {
   color: #02142B;
   background-color: rgba(0, 0, 0, 0.1);
-  margin-left: -0.25rem;
-  padding-left: 0.75rem;
+  /* margin-left: -0.25rem; */
+  /* padding-left: 0.75rem; */
 }
 
-/* Sidebar Footer - Bottom section */
-.sidebarFooter {
+/* Main Content Wrapper - Parent container with padding */
+.mainContentWrapper {
+  flex: 1;
+  padding: 16px 16px 16px 0; /* top right bottom left - no padding on left where it meets sidebar */
+  min-height: 0;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-top: auto;
-  padding-top: 1.5rem;
-  position: relative;
-}
-
-/* Let's Connect Button */
-.connectButton {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.75rem;
-  padding: 0.0rem 0.75rem 0.75rem 0.5rem;
-  background: none;
-  border: none;
-  font-family: 'PP Nikkei Journal', system-ui, sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  color: rgba(2, 20, 43, 0.7);
-  cursor: pointer;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  text-align: left;
-  width: 100%;
-  letter-spacing: var(--pp-nikkei-letter-spacing);
-}
-
-.connectButton svg {
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-}
-
-.connectButton:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: #02142B;
-}
-
-/* Social Links Dropdown */
-.socialLinksDropdown {
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  margin-bottom: 0.25rem;
-  padding: 0.5rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  border: 1px solid rgba(220, 220, 220, 0.6);
-}
-
-/* Social Link Item */
-.socialLink {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.5rem 0.75rem 0.5rem 0.5rem;
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: rgba(2, 20, 43, 0.7);
-  text-decoration: none;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-}
-
-.socialLink:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: #02142B;
-}
-
-.socialLink svg {
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
 }
 
 /* Main Content Area - Right panel */
 .mainContent {
   flex: 1;
   background-color: #FFFFFF;
-  margin: 0rem 0.5rem 0.5rem 0;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   min-height: 0; /* Allow flexbox to work properly */
@@ -279,13 +204,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 /* Personalized Greeting */
 .contentHeader .greeting {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 600;
   color: #02142B;
   margin: 0;
@@ -325,10 +250,9 @@
 }
 
 .socialButton:hover {
-  background-color: #02142B;
-  color: #82FF82;
+  background-color: #2281223b;
+  color: #2e942e;
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .socialButton svg {
@@ -339,17 +263,21 @@
 .kpiGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
   margin: 1rem 0rem 0rem;
 }
 
 /* Journey Section - Gantt chart container */
 .journeySection {
   margin-top: 1rem;
-  padding: 2rem;
+  padding: 2rem 2rem 0.5rem;
   background-color: #FFFFFF;
   border-radius: 12px;
   border: 1px solid rgba(220, 220, 220, 0.6);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .journeySection:hover {
@@ -630,11 +558,12 @@
 /* Skills Scroller - Grid container */
 .skillsScroller {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   overflow-y: auto;
-  max-height: 600px;
+  max-height: 70vh;
   padding-right: 0.5rem;
+  padding-bottom:2rem
 }
 
 .skillsScroller::-webkit-scrollbar {
@@ -663,8 +592,7 @@
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 0.75rem;
+  gap: 1rem;
   transition: all 0.3s ease;
 }
 
@@ -676,12 +604,11 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  width: 100%;
 }
 
 .skillIcon {
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   background-color: #02142B;
   border-radius: 8px;
   display: flex;
@@ -690,31 +617,21 @@
   flex-shrink: 0;
 }
 
-.skillIconText {
-  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
-  font-size: 24px;
-  font-weight: 600;
-  color: #82FF82;
-  letter-spacing: var(--pp-nikkei-letter-spacing);
-}
-
 .skillName {
   font-family: 'PP Nikkei Journal', 'Courier New', monospace;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
   color: #02142B;
   margin: 0;
-  letter-spacing: var(--pp-nikkei-letter-spacing);
+  letter-spacing: 0.02rem;
 }
 
 .skillDescription {
   font-family: 'PP Nikkei Journal', 'Courier New', monospace;
-  font-size: 13px;
-  font-weight: 400;
-  color: rgba(2, 20, 43, 0.6);
+  font-size: 16px;
+  color: rgba(2, 20, 43, 0.4);
   margin: 0;
   line-height: 1.25;
-  letter-spacing: var(--pp-nikkei-letter-spacing);
+  letter-spacing: 0.02rem;
 }
 
 /* Projects Section */
@@ -726,10 +643,11 @@
 .projectsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 1.5rem;
   overflow-y: auto;
-  max-height: 600px;
-  padding-right: 0.5rem;
+  max-height: 70vh;
+  padding-right: 1rem;
+  padding-bottom: 2rem
 }
 
 .projectsGrid::-webkit-scrollbar {
@@ -752,7 +670,7 @@
 
 /* Project Card */
 .projectCard {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: 1px solid rgba(220, 220, 220, 0.6);
   border-radius: 12px;
   overflow: hidden;
@@ -771,19 +689,22 @@
 
 .projectImage {
   width: 100%;
-  height: 200px;
-  background-color: #f0f0f0;
+  aspect-ratio: 16 / 9;
+  background-color: #ffffff;
   overflow: hidden;
   position: relative;
-  padding: 0.3rem;
 }
 
 .projectImageContent {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top;
   border-radius: 12px;
+  padding: 0.3rem;
 }
 
 .projectContent {
@@ -795,24 +716,23 @@
 }
 
 .projectTitle {
-  font-family: var(--font-chivo-mono), 'Courier New', monospace;
-  font-size: 18px;
-  font-weight: 600;
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 22px;
   color: #02142B;
   margin: 0;
   line-height: 1.3;
-  letter-spacing: var(--chivo-mono-letter-spacing);
+  letter-spacing: 0.02rem;
 }
 
 .projectDescription {
   font-family: 'PP Nikkei Journal', 'Courier New', monospace;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   color: rgba(2, 20, 43, 0.6);
   margin: 0;
-  line-height: 1.6;
+  line-height: 135%;
   flex: 1;
-  letter-spacing: var(--pp-nikkei-letter-spacing);
+  letter-spacing: 0.02rem;
 }
 
 .projectSkills {
@@ -832,79 +752,15 @@
   height: 100%;
 }
 
-/* Experience Navigation - Left sidebar */
-.experienceNav {
-  width: 15rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  flex-shrink: 0;
-  overflow-y: auto;
-  max-height: 600px;
-  padding-right: 0.5rem;
-}
-
-.experienceNav::-webkit-scrollbar {
-  width: 6px;
-}
-
-.experienceNav::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 3px;
-}
-
-.experienceNav::-webkit-scrollbar-thumb {
-  background: rgba(2, 20, 43, 0.2);
-  border-radius: 3px;
-}
-
-.experienceNav::-webkit-scrollbar-thumb:hover {
-  background: rgba(2, 20, 43, 0.3);
-}
-
-.expNavItem {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0.75rem 0;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-align: left;
-}
-
-.expNavItem:hover .expNavRole {
-  opacity: 0.8;
-}
-
-.expNavItemActive .expNavRole {
-  opacity: 1 !important;
-}
-
-.expNavRole {
-  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
-  font-size: 14px;
-  font-weight: 500;
-  color: #02142B;
-  opacity: 0.4;
-  line-height: 1.3;
-  transition: opacity 0.2s ease;
-  letter-spacing: var(--pp-nikkei-letter-spacing);
-}
-
-.expNavCompany {
-  display: none;
-}
-
 /* Experience Scroller - Main content area */
 .experienceContent {
   flex: 1;
   overflow-y: auto;
-  max-height: 600px;
+  max-height: 70vh;
   padding-right: 0.5rem;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
+  padding-bottom: 2rem;
 }
 
 .experienceContent::-webkit-scrollbar {
@@ -916,11 +772,11 @@
   background-color: #FFFFFF;
   border: 1px solid rgba(220, 220, 220, 0.6);
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .experienceCard:hover {
@@ -959,61 +815,36 @@
 
 .expRole {
   font-family: 'PP Nikkei Journal', 'Courier New', monospace;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   color: #02142B;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.1rem 0;
   line-height: 1.3;
-  letter-spacing: var(--pp-nikkei-letter-spacing);
+  letter-spacing: 0.02rem;
 }
 
 .expCompany {
   font-family: 'PP Nikkei Journal', 'Courier New', monospace;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   color: rgba(2, 20, 43, 0.7);
-  margin: 0 0 0.75rem 0;
-  letter-spacing: var(--pp-nikkei-letter-spacing);
+  margin: 0 0 0.1rem 0;
+  letter-spacing: 0.02rem;
 }
 
 .expMeta {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   font-family: 'PP Nikkei Journal', 'Courier New', monospace;
-  font-size: 13px;
+  font-size: 16px;
   color: rgba(2, 20, 43, 0.5);
-  letter-spacing: var(--pp-nikkei-letter-spacing);
+  letter-spacing: 0.02rem;
 }
 
 .expLocation,
 .expPeriod {
   font-weight: 400;
-}
-
-.expDivider {
-  color: rgba(2, 20, 43, 0.3);
-}
-
-/* Experience KPI Cards Grid */
-.expKpis {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-
-
-/* Experience Skills Section Container */
-.expSkills {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.expSkillsGrid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
 }
 
 /* Footer Container - Third Container */

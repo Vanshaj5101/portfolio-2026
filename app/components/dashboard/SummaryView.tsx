@@ -25,7 +25,7 @@ const kpiData = [
   }
 ];
 
-export default function SummaryView() {
+export default function ProfileView() {
   return (
     <>
       <div className={dashboardStyles.kpiGrid}>

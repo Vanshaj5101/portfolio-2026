@@ -51,27 +51,40 @@ const ganttData: GanttItem[] = [
 
 export default function GanttChart() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const barsContainerRef = useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = useState(0);
+  const [barSpacing, setBarSpacing] = useState(60);
 
   // Timeline boundaries
   const timelineStart = new Date('2023-01-01').getTime();
-  const timelineEnd = new Date('2027-01-01').getTime();
+  const timelineEnd = new Date().getTime(); // Current date
   const totalMilliseconds = timelineEnd - timelineStart;
 
   // Year markers (Jan 1st of each year)
-  const yearMarkers = [2023, 2024, 2025, 2026, 2027];
+  const yearMarkers = [2023, 2024, 2025, 2026];
 
-  // Handle container resize
+  // Handle container resize and calculate bar spacing
   useEffect(() => {
-    const updateWidth = () => {
+    const updateDimensions = () => {
       if (containerRef.current) {
         setContainerWidth(containerRef.current.offsetWidth);
       }
+      if (barsContainerRef.current) {
+        const height = barsContainerRef.current.offsetHeight;
+        // Distribute bars evenly across the full height
+        const spacing = height / ganttData.length;
+        setBarSpacing(spacing);
+      }
     };
 
-    updateWidth();
-    window.addEventListener('resize', updateWidth);
-    return () => window.removeEventListener('resize', updateWidth);
+    updateDimensions();
+    // Add a small delay to ensure DOM is fully rendered
+    const timeoutId = setTimeout(updateDimensions, 100);
+    window.addEventListener('resize', updateDimensions);
+    return () => {
+      window.removeEventListener('resize', updateDimensions);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   // Calculate position percentage
@@ -109,7 +122,7 @@ export default function GanttChart() {
     <div className={styles.ganttContainer}>
       <div className={styles.ganttWrapper} ref={containerRef}>
         {/* Gantt bars */}
-        <div className={styles.barsContainer}>
+        <div className={styles.barsContainer} ref={barsContainerRef}>
           {ganttData.map((item, index) => {
             const leftPosition = calculatePosition(item.startDate);
             const rightPosition = calculatePosition(item.endDate);
@@ -120,7 +133,8 @@ export default function GanttChart() {
                 key={item.id}
                 className={styles.barWrapper}
                 style={{
-                  top: `${index * 60}px`
+                  top: `${index * barSpacing}px`,
+                  height: `${barSpacing}px`
                 }}
               >
                 {/* Bar */}
@@ -155,7 +169,7 @@ export default function GanttChart() {
         </div>
 
         {/* X-axis */}
-        <div className={styles.xAxis} style={{ top: `${ganttData.length * 60 + 20}px` }}>
+        <div className={styles.xAxis}>
           <div className={styles.axisLine} />
 
           {/* Year markers */}
@@ -178,3 +192,5 @@ export default function GanttChart() {
     </div>
   );
 }
+
+

@@ -86,7 +86,7 @@ export default function ExperienceView() {
               </div>
 
               {/* KPIs */}
-              <div className={dashboardStyles.expKpis}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
                 {exp.kpis.map((kpi, index) => (
                   <KPICard
                     key={index}
@@ -98,9 +98,9 @@ export default function ExperienceView() {
               </div>
 
               {/* Skills */}
-              <div className={dashboardStyles.expSkills}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <SectionTitle>SKILLS USED</SectionTitle>
-                <div className={dashboardStyles.expSkillsGrid}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                   {exp.skills.map((skill, index) => (
                     <SkillChip key={index} label={skill} />
                   ))}

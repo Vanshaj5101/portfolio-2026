@@ -14,7 +14,7 @@ export default function ExperienceView() {
     const container = e.currentTarget;
     const cards = container.querySelectorAll('[data-exp-id]');
 
-    let closestCard: Element | null = null;
+    let closestCard: HTMLElement | null = null;
     let closestDistance = Infinity;
 
     cards.forEach((card) => {
@@ -24,7 +24,7 @@ export default function ExperienceView() {
 
       if (distance < closestDistance) {
         closestDistance = distance;
-        closestCard = card;
+        closestCard = card as HTMLElement;
       }
     });
 

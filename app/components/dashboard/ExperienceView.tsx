@@ -12,7 +12,7 @@ export default function ExperienceView() {
 
   const handleExperienceScroll = (e: React.UIEvent<HTMLDivElement>) => {
     const container = e.currentTarget;
-    const cards = container.querySelectorAll('[data-exp-id]');
+    const cards = Array.from(container.querySelectorAll<HTMLElement>('[data-exp-id]'));
 
     let closestCard: HTMLElement | null = null;
     let closestDistance = Infinity;
@@ -24,7 +24,7 @@ export default function ExperienceView() {
 
       if (distance < closestDistance) {
         closestDistance = distance;
-        closestCard = card as HTMLElement;
+        closestCard = card;
       }
     });
 

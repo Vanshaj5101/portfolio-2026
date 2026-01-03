@@ -3,8 +3,9 @@ import dashboardStyles from '../../styles/dashboard.module.css';
 
 export default function Footer() {
   return (
-    <>
-      <footer className={dashboardStyles.footer}>
+    <footer className={dashboardStyles.footerContainer}>
+      {/* Image Container - Full width with centered image */}
+      <div className={dashboardStyles.footerImageContainer}>
         <Image
           src="/images/approach_image.png"
           alt="Approach"
@@ -12,8 +13,9 @@ export default function Footer() {
           height={600}
           className={dashboardStyles.approachImage}
         />
-      </footer>
+      </div>
 
+      {/* Contact Section */}
       <div className={dashboardStyles.contactSection}>
         <div className={dashboardStyles.socialIcons}>
           <a href="https://www.linkedin.com/in/vanshajgupta/" target="_blank" rel="noopener noreferrer" className={dashboardStyles.socialIcon}>
@@ -49,6 +51,6 @@ export default function Footer() {
         </div>
         <div className={dashboardStyles.radialGlow}></div>
       </div>
-    </>
+    </footer>
   );
 }

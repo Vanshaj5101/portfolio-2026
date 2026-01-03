@@ -3,14 +3,14 @@
   width: 100%;
   padding: 0;
   overflow: visible;
-  min-height: 340px;
+  min-height: 240px;
   background-color: transparent;
 }
 
 .ganttWrapper {
   position: relative;
   width: 100%;
-  min-height: 320px;
+  min-height: 220px;
   padding: 0;
   background-color: transparent;
 }
@@ -19,22 +19,22 @@
 .barsContainer {
   position: relative;
   width: 100%;
-  height: 250px;
-  margin-bottom: 2.5rem;
+  height: 180px;
+  margin-bottom: 1.5rem;
   background-color: transparent;
 }
 
 .barWrapper {
   position: absolute;
   width: 100%;
-  height: 50px;
+  height: 60px;
   left: 0;
 }
 
 /* Bar Styles */
 .bar {
   position: absolute;
-  height: 12px;
+  height: 42px;
   border-radius: 6px;
   transition: all 0.2s ease;
   z-index: 2;
@@ -59,7 +59,7 @@
 /* Label Styles */
 .label {
   position: absolute;
-  top: 18px;
+  top: -28px;
   white-space: nowrap;
   pointer-events: none;
   z-index: 1;

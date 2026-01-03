@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import dashboardStyles from '../../styles/dashboard.module.css';
 import SummaryView from './SummaryView';
@@ -25,11 +25,102 @@ import { SiTableau } from 'react-icons/si';
 export default function DashboardSection() {
   const [activeSection, setActiveSection] = useState('Summary');
   const [showSocialLinks, setShowSocialLinks] = useState(false);
+  const [buttonOpacity, setButtonOpacity] = useState(1);
   const { greetingParts } = usePersonalizedGreeting();
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Calculate how much of the dashboard is visible
+        // If dashboard top is at 40% of viewport (60% visible), hide button
+        const visibleThreshold = windowHeight * 0.4;
+
+        if (rect.top <= visibleThreshold) {
+          setButtonOpacity(0);
+        } else {
+          setButtonOpacity(1);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleScrollClick = () => {
+    // Set opacity to 0
+    setButtonOpacity(0);
+
+    // Wait a moment for the opacity transition, then scroll
+    setTimeout(() => {
+      if (sectionRef.current) {
+        sectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 300);
+  };
 
   return (
-    <section id="portfolio" className={dashboardStyles.portfolioSection}>
+    <section id="portfolio" ref={sectionRef} className={dashboardStyles.portfolioSection}>
+      {/* Scroll Indicator */}
+      <button
+        onClick={handleScrollClick}
+        className={dashboardStyles.scrollIndicator}
+        style={{ opacity: buttonOpacity, transition: 'opacity 0.3s ease' }}
+        aria-label="Scroll to dashboard"
+      >
+        <div className={dashboardStyles.scrollIcon}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 11L12 6L17 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M7 18L12 13L17 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
+        <span className={dashboardStyles.scrollText}>CLICK OR SCROLL</span>
+      </button>
+
       <div className={dashboardStyles.portfolioBox}>
+        {/* Mobile Top Navbar - Inside dashboard */}
+        <div className={dashboardStyles.mobileTopNav}>
+          <div className={dashboardStyles.mobileNavContainer}>
+            <button
+              onClick={() => setActiveSection('Summary')}
+              className={`${dashboardStyles.mobileNavItem} ${
+                activeSection === 'Summary' ? dashboardStyles.active : ''
+              }`}
+            >
+              Summary
+            </button>
+            <button
+              onClick={() => setActiveSection('Experience')}
+              className={`${dashboardStyles.mobileNavItem} ${
+                activeSection === 'Experience' ? dashboardStyles.active : ''
+              }`}
+            >
+              Experience
+            </button>
+            <button
+              onClick={() => setActiveSection('Projects')}
+              className={`${dashboardStyles.mobileNavItem} ${
+                activeSection === 'Projects' ? dashboardStyles.active : ''
+              }`}
+            >
+              Projects
+            </button>
+            <button
+              onClick={() => setActiveSection('Skills')}
+              className={`${dashboardStyles.mobileNavItem} ${
+                activeSection === 'Skills' ? dashboardStyles.active : ''
+              }`}
+            >
+              Skills
+            </button>
+          </div>
+        </div>
         <div className={dashboardStyles.sidebar}>
           <div className={dashboardStyles.sidebarHeader}>
             <div className={dashboardStyles.logo}>

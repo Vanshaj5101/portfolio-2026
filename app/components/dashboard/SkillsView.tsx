@@ -2,6 +2,7 @@ import { useState } from 'react';
 import dashboardStyles from '../../styles/dashboard.module.css';
 import skillsData from '../../../data/data.json';
 import { getSkillIcon } from '../../utils/skillIcons';
+import FilterButton from '../shared/FilterButton';
 
 export default function SkillsView() {
   const [activeSkillCategory, setActiveSkillCategory] = useState('All');
@@ -12,15 +13,12 @@ export default function SkillsView() {
     <div className={dashboardStyles.skillsSection}>
       <div className={dashboardStyles.skillsFilters}>
         {categories.map((category) => (
-          <button
+          <FilterButton
             key={category}
+            label={category}
+            isActive={activeSkillCategory === category}
             onClick={() => setActiveSkillCategory(category)}
-            className={`${dashboardStyles.filterButton} ${
-              activeSkillCategory === category ? dashboardStyles.filterButtonActive : ''
-            }`}
-          >
-            {category}
-          </button>
+          />
         ))}
       </div>
 

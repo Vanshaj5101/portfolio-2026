@@ -1,0 +1,193 @@
+/* ===================================
+   SHARED REUSABLE COMPONENTS STYLES
+   =================================== */
+
+/* KPI Card Styles */
+.kpiCard {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid rgba(2, 20, 43, 0.08);
+  transition: all 0.2s ease;
+}
+
+.kpiCard:hover {
+  border-color: rgba(2, 20, 43, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.kpiTitle {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(2, 20, 43, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  margin: 0;
+}
+
+.kpiValue {
+  font-family: var(--font-chivo-mono), 'Courier New', monospace;
+  font-size: 42px;
+  font-weight: 600;
+  color: #02142B;
+  margin: 0;
+  line-height: 1;
+  padding: 0.5rem 0rem
+}
+
+.kpiDescription {
+  font-family: 'PP Nikkei Journal', system-ui, sans-serif;
+  font-size: 13px;
+  color: rgba(2, 20, 43, 0.7);
+  margin: 0;
+  line-height: 1.4;
+  letter-spacing: 0.05rem;
+}
+
+/* Skill Chip Styles */
+.skillChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 0.875rem;
+  background-color: rgba(2, 20, 43, 0.06);
+  border-radius: 20px;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(2, 20, 43, 0.8);
+  transition: all 0.2s ease;
+}
+
+.skillChip:hover {
+  background-color: rgba(2, 20, 43, 0.1);
+}
+
+/* Description List Styles */
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.descriptionTitle {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(2, 20, 43, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin: 0;
+}
+
+.descriptionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.descriptionItem {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 13px;
+  color: rgba(2, 20, 43, 0.75);
+  line-height: 1.5;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.descriptionItem::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: rgba(2, 20, 43, 0.4);
+  font-weight: 600;
+}
+
+/* Section Title Styles */
+.sectionTitle {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(2, 20, 43, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin: 0 0 0.75rem 0;
+}
+
+/* Filter Button Styles */
+.filterButton {
+  padding: 0.5rem 1rem;
+  background: none;
+  border: 1px solid rgba(2, 20, 43, 0.15);
+  border-radius: 20px;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(2, 20, 43, 0.6);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filterButton:hover {
+  background-color: rgba(2, 20, 43, 0.05);
+  border-color: rgba(2, 20, 43, 0.25);
+  color: rgba(2, 20, 43, 0.8);
+}
+
+.filterButtonActive {
+  background-color: #02142B;
+  border-color: #02142B;
+  color: #FFFFFF;
+}
+
+.filterButtonActive:hover {
+  background-color: rgba(2, 20, 43, 0.9);
+  border-color: rgba(2, 20, 43, 0.9);
+  color: #FFFFFF;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .kpiCard {
+    padding: 1.25rem;
+  }
+
+  .kpiValue {
+    font-size: 28px;
+  }
+
+  .kpiDescription {
+    font-size: 12px;
+  }
+
+  .skillChip {
+    font-size: 11px;
+    padding: 0.3rem 0.75rem;
+  }
+
+  .filterButton {
+    font-size: 12px;
+    padding: 0.4rem 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .kpiCard {
+    padding: 1rem;
+  }
+
+  .kpiValue {
+    font-size: 24px;
+  }
+
+  .kpiDescription {
+    font-size: 11px;
+  }
+}

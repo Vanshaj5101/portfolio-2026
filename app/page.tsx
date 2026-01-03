@@ -5,18 +5,27 @@ import DashboardSection from './components/dashboard/DashboardSection';
 import Footer from './components/footer/Footer';
 
 export default function Home() {
-  const scrollToPortfolio = () => {
-    const portfolioSection = document.getElementById('portfolio');
-    if (portfolioSection) {
-      portfolioSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <>
-      <LandingSection onScrollClick={scrollToPortfolio} />
-      <DashboardSection />
-      <Footer />
-    </>
+    <div style={{
+      width: '100%',
+      padding: 0,
+      margin: 0,
+      background: 'transparent',
+    }}>
+      <LandingSection />
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '60px',
+          position: 'relative',
+          zIndex: 10,
+        }}
+        className="dashboard-wrapper"
+      >
+        <DashboardSection />
+        <Footer />
+      </div>
+    </div>
   );
 }

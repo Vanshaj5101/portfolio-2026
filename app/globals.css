@@ -55,3 +55,29 @@ a {
     color-scheme: dark;
   }
 }
+
+/* Dashboard wrapper responsive margins */
+.dashboard-wrapper {
+  margin-top: 60vh;
+}
+
+/* Tablets and below - adjust to show dashboard */
+@media (max-width: 1024px) {
+  .dashboard-wrapper {
+    margin-top: 60vh;
+  }
+}
+
+/* Mobile - more dashboard visible */
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    margin-top: 80vh;
+  }
+}
+
+/* Small mobile - even more dashboard visible */
+@media (max-width: 480px) {
+  .dashboard-wrapper {
+    margin-top: 80vh;
+  }
+}

@@ -2,6 +2,10 @@ import { useState } from 'react';
 import Image from 'next/image';
 import dashboardStyles from '../../styles/dashboard.module.css';
 import skillsData from '../../../data/data.json';
+import KPICard from '../shared/KPICard';
+import SkillChip from '../shared/SkillChip';
+import DescriptionList from '../shared/DescriptionList';
+import SectionTitle from '../shared/SectionTitle';
 
 export default function ExperienceView() {
   const [activeExperience, setActiveExperience] = useState(1);
@@ -10,7 +14,7 @@ export default function ExperienceView() {
     const container = e.currentTarget;
     const cards = container.querySelectorAll('[data-exp-id]');
 
-    let closestCard = null;
+    let closestCard: Element | null = null;
     let closestDistance = Infinity;
 
     cards.forEach((card) => {
@@ -84,49 +88,43 @@ export default function ExperienceView() {
               {/* KPIs */}
               <div className={dashboardStyles.expKpis}>
                 {exp.kpis.map((kpi, index) => (
-                  <div key={index} className={dashboardStyles.expKpiCard}>
-                    <div className={dashboardStyles.expKpiLabel}>{kpi.label}</div>
-                    <div className={dashboardStyles.expKpiValue}>{kpi.value}</div>
-                    <div className={dashboardStyles.expKpiDesc}>{kpi.description}</div>
-                  </div>
+                  <KPICard
+                    key={index}
+                    title={kpi.label}
+                    value={kpi.value}
+                    description={kpi.description}
+                  />
                 ))}
               </div>
 
               {/* Skills */}
               <div className={dashboardStyles.expSkills}>
-                <h4 className={dashboardStyles.expSkillsTitle}>SKILLS USED</h4>
+                <SectionTitle>SKILLS USED</SectionTitle>
                 <div className={dashboardStyles.expSkillsGrid}>
                   {exp.skills.map((skill, index) => (
-                    <span key={index} className={dashboardStyles.skillChip}>
-                      {skill}
-                    </span>
+                    <SkillChip key={index} label={skill} />
                   ))}
                 </div>
               </div>
 
               {/* Description */}
-              <div className={dashboardStyles.expDescription}>
-                <h4 className={dashboardStyles.expDescTitle}>KEY RESPONSIBILITIES</h4>
-                <ul className={dashboardStyles.expDescList}>
-                  {exp.description.map((desc, index) => (
-                    <li key={index} className={dashboardStyles.expDescItem}>{desc}</li>
-                  ))}
-                </ul>
-              </div>
+              <DescriptionList
+                title="KEY RESPONSIBILITIES"
+                items={exp.description}
+              />
 
             </div>
           ))}
         </div>
 
-        {/* Right Navigation - On this page */}
+        {/* Right Navigation - On this page with progress indicator */}
         <div style={{
           width: '200px',
           flexShrink: 0,
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
           paddingTop: '2rem',
-          paddingLeft: '1rem'
+          paddingLeft: '0.5rem'
         }}>
           <h3 style={{
             fontFamily: "'PP Nikkei Journal', 'Courier New', monospace",
@@ -135,41 +133,76 @@ export default function ExperienceView() {
             color: 'rgba(2, 20, 43, 0.6)',
             marginBottom: '1.5rem',
             textTransform: 'uppercase',
-            letterSpacing: '0.1rem',
-            width: '100%'
+            letterSpacing: '0.1rem'
           }}>
-            Roles
+            On this Page
           </h3>
+
+          {/* Role Names with Progress Indicator */}
           <div style={{
             display: 'flex',
-            flexDirection: 'column',
-            gap: '0.75rem',
-            width: '100%'
+            flexDirection: 'row',
+            gap: '1rem',
+            alignItems: 'stretch'
           }}>
-            {skillsData.experience.map((exp) => (
-              <button
-                key={exp.id}
-                onClick={() => scrollToExperience(exp.id)}
-                style={{
-                  fontFamily: "'PP Nikkei Journal', 'Courier New', monospace",
-                  fontSize: '13px',
-                  fontWeight: 500,
-                  color: activeExperience === exp.id ? '#02142B' : 'rgba(2, 20, 43, 0.4)',
-                  textAlign: 'left',
-                  background: 'none',
-                  border: 'none',
-                  cursor: 'pointer',
-                  padding: '0.5rem 0',
-                  borderLeft: activeExperience === exp.id ? '2px solid #02142B' : '2px solid transparent',
-                  paddingLeft: '0.75rem',
-                  transition: 'all 0.2s ease',
-                  letterSpacing: '0.05rem',
-                  lineHeight: 1.3
-                }}
-              >
-                {exp.role}
-              </button>
-            ))}
+            {/* Progress Indicator Line */}
+            <div style={{
+              width: '3px',
+              flexShrink: 0,
+              display: 'flex',
+              position: 'relative'
+            }}>
+              {/* Background line */}
+              <div style={{
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+                backgroundColor: 'rgba(2, 20, 43, 0.1)',
+                borderRadius: '2px'
+              }} />
+
+              {/* Active indicator */}
+              <div style={{
+                position: 'absolute',
+                width: '100%',
+                height: `${100 / skillsData.experience.length}%`,
+                backgroundColor: '#02142B',
+                borderRadius: '2px',
+                top: `${((activeExperience - 1) / skillsData.experience.length) * 100}%`,
+                transition: 'top 0.3s ease'
+              }} />
+            </div>
+
+            {/* Role Names */}
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.75rem',
+              flex: 1
+            }}>
+              {skillsData.experience.map((exp) => (
+                <button
+                  key={exp.id}
+                  onClick={() => scrollToExperience(exp.id)}
+                  style={{
+                    fontFamily: "'PP Nikkei Journal', 'Courier New', monospace",
+                    fontSize: '13px',
+                    fontWeight: 500,
+                    color: activeExperience === exp.id ? '#02142B' : 'rgba(2, 20, 43, 0.4)',
+                    padding: '0.5rem 0',
+                    transition: 'all 0.2s ease',
+                    letterSpacing: '0.05rem',
+                    lineHeight: 1.3,
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    textAlign: 'left'
+                  }}
+                >
+                  {exp.role}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>

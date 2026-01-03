@@ -12,13 +12,13 @@ interface GanttItem {
 }
 
 const ganttData: GanttItem[] = [
-  {
-    id: 'bachelors',
-    title: "BE Computer Engineering",
-    type: 'education',
-    startDate: '2019-06-01',
-    endDate: '2023-06-30'
-  },
+  // {
+  //   id: 'bachelors',
+  //   title: "BE Computer Engineering",
+  //   type: 'education',
+  //   startDate: '2019-06-01',
+  //   endDate: '2023-06-30'
+  // },
   {
     id: 'intern',
     title: 'Data Engineer',
@@ -26,13 +26,13 @@ const ganttData: GanttItem[] = [
     startDate: '2023-02-01',
     endDate: '2023-04-30'
   },
-  {
-    id: 'masters',
-    title: "MCS Computer Science",
-    type: 'education',
-    startDate: '2023-08-01',
-    endDate: '2025-05-31'
-  },
+  // {
+  //   id: 'masters',
+  //   title: "MCS Computer Science",
+  //   type: 'education',
+  //   startDate: '2023-08-01',
+  //   endDate: '2025-05-31'
+  // },
   {
     id: 'fulltime',
     title: 'Data Engineer',
@@ -54,12 +54,12 @@ export default function GanttChart() {
   const [containerWidth, setContainerWidth] = useState(0);
 
   // Timeline boundaries
-  const timelineStart = new Date('2019-01-01').getTime();
+  const timelineStart = new Date('2023-01-01').getTime();
   const timelineEnd = new Date('2027-01-01').getTime();
   const totalMilliseconds = timelineEnd - timelineStart;
 
   // Year markers (Jan 1st of each year)
-  const yearMarkers = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027];
+  const yearMarkers = [2023, 2024, 2025, 2026, 2027];
 
   // Handle container resize
   useEffect(() => {

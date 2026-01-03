@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import dashboardStyles from '../../styles/dashboard.module.css';
 import skillsData from '../../../data/data.json';
+import SkillChip from '../shared/SkillChip';
+import FilterButton from '../shared/FilterButton';
 
 export default function ProjectsView() {
   const [activeProjectCategory, setActiveProjectCategory] = useState('All');
@@ -12,15 +14,12 @@ export default function ProjectsView() {
     <div className={dashboardStyles.projectsSection}>
       <div className={dashboardStyles.skillsFilters}>
         {categories.map((category) => (
-          <button
+          <FilterButton
             key={category}
+            label={category}
+            isActive={activeProjectCategory === category}
             onClick={() => setActiveProjectCategory(category)}
-            className={`${dashboardStyles.filterButton} ${
-              activeProjectCategory === category ? dashboardStyles.filterButtonActive : ''
-            }`}
-          >
-            {category}
-          </button>
+          />
         ))}
       </div>
 
@@ -48,9 +47,7 @@ export default function ProjectsView() {
                 <h3 className={dashboardStyles.projectTitle}>{project.name}</h3>
                 <div className={dashboardStyles.projectSkills}>
                 {project.tags.map((tag, index) => (
-                  <span key={index} className={dashboardStyles.skillChip}>
-                    {tag}
-                  </span>
+                  <SkillChip key={index} label={tag} />
                 ))}
               </div>
               <p className={dashboardStyles.projectDescription}>{project.description}</p>

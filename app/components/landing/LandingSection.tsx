@@ -1,45 +1,66 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { FaLinkedinIn } from 'react-icons/fa';
 import styles from '../../styles/landing.module.css';
 
-interface LandingSectionProps {
-  onScrollClick: () => void;
-}
-
-export default function LandingSection({ onScrollClick }: LandingSectionProps) {
-  const [scrollOpacity, setScrollOpacity] = useState(1);
+export default function LandingSection() {
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const maxScroll = 450; // Fade out completely when dashboard is fully visible
-      const opacity = Math.max(0, 1 - scrollPosition / maxScroll);
-      setScrollOpacity(opacity);
+      const windowHeight = window.innerHeight;
+
+      // Calculate progress: 0 at top, 1 when scrolled one viewport height
+      const progress = Math.min(scrollPosition / windowHeight, 1);
+      setScrollProgress(progress);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Calculate scale: 1 at top, 0.5 at bottom (100% to 50%)
+  const scale = 1 - (scrollProgress * 0.5);
+
+  // Calculate opacity: 1 at top, 0 at bottom
+  const opacity = 1 - scrollProgress;
+
   return (
-    <main className={styles.container}>
-      <div className={styles.content} style={{ opacity: scrollOpacity }}>
+    <main
+      className={styles.container}
+      style={{
+        transform: `scale(${scale})`,
+        opacity: opacity,
+      }}
+    >
+      <div className={styles.content}>
         <p className={styles.greeting}>HEY, I&apos;M VANSHAJ GUPTA</p>
         <h1 className={styles.headline}>
           A scrappy <span className={styles.highlight}>data engineer</span> obsessed with turning<br />
           <span className={styles.highlight}>chaotic, messy data into business insights.</span>
         </h1>
 
-        <button onClick={onScrollClick} className={styles.scrollIndicator}>
-          <div className={styles.scrollIcon}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7 11L12 6L17 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M7 18L12 13L17 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
-          <span className={styles.scrollText}>SCROLL</span>
-        </button>
+        <div className={styles.buttonContainer}>
+          <a
+            href="https://www.linkedin.com/in/vanshajgupta/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.linkedinButton}
+            aria-label="LinkedIn"
+          >
+            <FaLinkedinIn size={24} />
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1I59cGZKu6dnwFvqWMydJRNRqbBNBfIiv/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.resumeButton}
+          >
+            Resume
+          </a>
+        </div>
       </div>
     </main>
   );

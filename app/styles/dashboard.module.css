@@ -1,35 +1,92 @@
-/* Portfolio Section - Main container */
+/* Portfolio Section - Main container (Second Container) */
 .portfolioSection {
   position: relative;
-  min-height: 100vh;
-  margin-top: calc(100vh - 450px);
-  padding: 2rem 10rem 10rem;
+  width: 100%;
+  max-width: 1620px;
+  height: 1119px;
+  margin: 0 auto;
+  padding: 0 32px;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  opacity: 1;
   z-index: 10;
+  box-sizing: border-box;
+  transition: gap 0.3s ease;
+}
+
+/* Portfolio Section when scroll indicator is hidden */
+.portfolioSectionNoScroll {
+  gap: 0;
 }
 
 /* Portfolio Box - Dashboard container */
 .portfolioBox {
   width: 100%;
+  max-width: 1620px;
+  height: 1029px;
   background-color: #f9f9f9;
-  border-radius: 16px;
-  border: 10px solid rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  border: 11px solid rgba(0, 0, 0, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  min-height: 830px;
+  opacity: 1;
   display: flex;
+  box-sizing: border-box;
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.3s ease;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.scrollIndicator:hover {
+  transform: translateY(-4px);
+}
+
+.scrollIcon {
+  color: rgba(213, 220, 231, 0.6);
+  animation: bounce 2s infinite;
+}
+
+.scrollText {
+  font-family: var(--font-chivo-mono), 'Courier New', monospace;
+  font-size: 14px;
+  letter-spacing: 0.4em;
+  color: rgba(213, 220, 231, 0.4);
+  font-weight: 400;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
 }
 
 /* Sidebar - Left navigation panel */
 .sidebar {
-  width: 280px;
+  width: clamp(220px, 18vw, 280px); /* Responsive width */
   background-color: transparent;
-  padding: 1rem 0.5rem;
+  padding: 1rem 1rem;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  height: 100%; /* Fill parent height */
+  min-height: 0; /* Allow flexbox to work properly */
 }
 
 /* Sidebar Header */
@@ -202,8 +259,9 @@
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  height: calc(830px - 1rem);
-  overflow: hidden;
+  min-height: 0; /* Allow flexbox to work properly */
+  height: 100%; /* Fill available height */
+  overflow: hidden; /* No scrolling - content should fit */
   display: flex;
   flex-direction: column;
 }
@@ -277,54 +335,12 @@
   flex-shrink: 0;
 }
 
-/* KPI Cards - Summary section metrics */
+/* KPI Grid - Layout for KPI cards */
 .kpiGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   margin: 1rem 0rem 0rem;
-}
-
-.kpiCard {
-  background-color: #FFFFFF;
-  border-radius: 12px;
-  padding: 1.5rem;
-  border: 1px solid rgba(220, 220, 220, 0.6);
-  transition: all 0.3s ease;
-}
-
-.kpiCard:hover {
-  border: 1px solid rgba(2, 20, 43, 0.3);
-}
-
-.kpiTitle {
-  font-family: var(--font-chivo-mono), 'Courier New', monospace;
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(2, 20, 43, 0.6);
-  margin: 0 0 0.75rem 0;
-  text-transform: uppercase;
-  letter-spacing: var(--chivo-mono-letter-spacing);
-}
-
-.kpiValue {
-  font-family: var(--font-chivo-mono), 'Courier New', monospace;
-  font-size: 48px;
-  font-weight: 500;
-  color: #02142B;
-  margin: 1.5rem 0 1rem 0;
-  line-height: 1;
-  letter-spacing: var(--chivo-mono-letter-spacing);
-}
-
-.kpiDescription {
-  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
-  font-size: 13px;
-  font-weight: 400;
-  color: rgba(2, 20, 43, 0.4);
-  margin: 0.5rem 0rem 0rem 0rem;
-  line-height: 1.5;
-  letter-spacing: var(--pp-nikkei-letter-spacing)
 }
 
 /* Journey Section - Gantt chart container */
@@ -603,43 +619,12 @@
   margin-top: 1rem;
 }
 
-/* Skills Filter Buttons */
+/* Skills Filter Buttons Container */
 .skillsFilters {
   display: flex;
   gap: 0.75rem;
   margin-bottom: 2rem;
   flex-wrap: wrap;
-}
-
-.filterButton {
-  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
-  font-size: 13px;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  background-color: #FFFFFF;
-  border: 1px solid rgba(220, 220, 220, 0.6);
-  border-radius: 20px;
-  color: rgba(2, 20, 43, 0.6);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  letter-spacing: var(--pp-nikkei-letter-spacing);
-}
-
-.filterButton:hover {
-  border-color: rgba(2, 20, 43, 0.3);
-  color: #02142B;
-  background-color: rgba(2, 20, 43, 0.02);
-}
-
-.filterButtonActive {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: #02142B;
-  border-color: rgba(2, 20, 43, 0.3);
-}
-
-.filterButtonActive:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: #02142B;
 }
 
 /* Skills Scroller - Grid container */
@@ -836,19 +821,6 @@
   gap: 0.5rem;
 }
 
-/* Skill Chip - Used in projects and experience */
-.skillChip {
-  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
-  font-size: 11px;
-  font-weight: 500;
-  padding: 0.375rem 0.75rem;
-  background-color: #FFFFFF;
-  border: 1px solid rgba(220, 220, 220, 0.6);
-  color: #000000;
-  border-radius: 12px;
-  letter-spacing: var(--pp-nikkei-letter-spacing);
-}
-
 /* Experience Section */
 .experienceSection {
   margin-top: 1rem;
@@ -931,24 +903,12 @@
   overflow-y: auto;
   max-height: 600px;
   padding-right: 0.5rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
 .experienceContent::-webkit-scrollbar {
-  width: 6px;
-}
-
-.experienceContent::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 3px;
-}
-
-.experienceContent::-webkit-scrollbar-thumb {
-  background: rgba(2, 20, 43, 0.2);
-  border-radius: 3px;
-}
-
-.experienceContent::-webkit-scrollbar-thumb:hover {
-  background: rgba(2, 20, 43, 0.3);
+  display: none; /* Chrome, Safari, Opera */
 }
 
 /* Experience Card */
@@ -1035,118 +995,48 @@
   color: rgba(2, 20, 43, 0.3);
 }
 
-/* Experience KPI Cards */
+/* Experience KPI Cards Grid */
 .expKpis {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
-.expKpiCard {
-  background-color: #FFFFFF;
-  border: 1px solid rgba(220, 220, 220, 0.6);
-  border-radius: 8px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
 
-.expKpiLabel {
-  font-family: var(--font-chivo-mono), 'Courier New', monospace;
-  font-size: 11px;
-  font-weight: 500;
-  color: rgba(2, 20, 43, 0.5);
-  text-transform: uppercase;
-  letter-spacing: var(--chivo-mono-letter-spacing);
-}
-
-.expKpiValue {
-  font-family: var(--font-chivo-mono), 'Courier New', monospace;
-  font-size: 32px;
-  font-weight: 600;
-  margin: 1rem 0 0.5rem 0;
-  color: #02142B;
-  line-height: 1;
-  letter-spacing: var(--chivo-mono-letter-spacing);
-}
-
-.expKpiDesc {
-  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
-  font-size: 12px;
-  font-weight: 400;
-  color: rgba(2, 20, 43, 0.4);
-  line-height: 1.3;
-  letter-spacing: var(--pp-nikkei-letter-spacing);
-}
-
-/* Experience Description Section */
-.expDescription {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.expDescTitle {
-  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(2, 20, 43, 0.6);
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: var(--pp-nikkei-letter-spacing);
-}
-
-.expDescList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.expDescItem {
-  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
-  font-size: 14px;
-  font-weight: 400;
-  color: rgba(2, 20, 43, 0.7);
-  line-height: 1.6;
-  padding-left: 1.5rem;
-  position: relative;
-  letter-spacing: var(--pp-nikkei-letter-spacing);
-}
-
-.expDescItem::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: #000000;
-  font-weight: 600;
-  font-size: 18px;
-}
-
-/* Experience Skills Section */
+/* Experience Skills Section Container */
 .expSkills {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.expSkillsTitle {
-  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(2, 20, 43, 0.6);
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: var(--pp-nikkei-letter-spacing);
-}
-
 .expSkillsGrid {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+}
+
+/* Footer Container - Third Container */
+.footerContainer {
+  position: relative;
+  width: 100%;
+  max-width: 1900px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  opacity: 1;
+  box-sizing: border-box;
+}
+
+/* Footer Image Container - Full width with centered image */
+.footerImageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 /* Footer Section */
@@ -1174,7 +1064,6 @@
   align-items: center;
   padding: 2rem 0 0;
   overflow: visible;
-  min-height: 25vh;
 }
 
 .socialIcons {
@@ -1247,13 +1136,269 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  .portfolioSection {
+    z-index: 5;
+  }
+
   .sidebar {
     width: 240px;
+  }
+
+  .portfolioBox {
+    max-width: 100%;
+    height: clamp(750px, calc(100vh - 200px), 1000px);
   }
 }
 
 @media (max-width: 768px) {
   .sidebar {
     width: 100%;
+  }
+
+  .portfolioBox {
+    height: auto;
+    min-height: 600px;
+  }
+}
+
+/* Large Desktop - Fluid scaling with max constraints */
+@media (min-width: 1280px) {
+  .portfolioSection {
+    padding: 0.5rem 5rem 4rem;
+  }
+
+  .portfolioBox {
+    max-width: clamp(1200px, 90vw, 1800px);
+    height: clamp(830px, calc(100vh - 250px), 1200px);
+  }
+}
+
+/* Ultra-wide screens - Maximum constraints */
+@media (min-width: 1920px) {
+  .portfolioSection {
+    padding: 2rem 10rem 10rem;
+  }
+
+  .portfolioBox {
+    max-width: 1800px;
+    height: clamp(900px, calc(100vh - 250px), 1200px);
+  }
+}
+
+/* Very large screens - Prevent over-stretching */
+@media (min-width: 2560px) {
+  .portfolioBox {
+    max-width: 2000px;
+    height: clamp(1000px, calc(100vh - 300px), 1400px);
+  }
+}
+
+/* ===================================
+   MOBILE HORIZONTAL NAVBAR
+   =================================== */
+
+/* Mobile Top Navbar - Hidden by default */
+.mobileTopNav {
+  display: none;
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 1023px) {
+  /* Hide sidebar, show mobile nav */
+  .sidebar {
+    display: none !important;
+  }
+
+  .mobileTopNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0.5rem;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .mobileNavContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    background: #FFFFFF;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    min-width: 390px;
+    max-width: 500px;
+    width: auto;
+  }
+
+  .mobileNavTabs {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+  }
+
+  .mobileNavItem {
+    padding: 0.5rem 0.875rem;
+    background: none;
+    border: none;
+    font-family: 'PP Nikkei Journal', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(2, 20, 43, 0.5);
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.01rem;
+    white-space: nowrap;
+  }
+
+  .mobileNavItem:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+    color: #02142B;
+  }
+
+  .mobileNavItem.active {
+    background-color: rgba(2, 20, 43, 0.08);
+    color: #02142B;
+    font-weight: 500;
+  }
+
+  .mobileConnectBtn {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 0.625rem 1.25rem;
+    background: none;
+    border: none;
+    font-family: 'PP Nikkei Journal', system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(2, 20, 43, 0.5);
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+    margin-left: 0.5rem;
+    padding-left: 1rem;
+  }
+
+  .mobileConnectBtn:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+    color: #02142B;
+  }
+
+  .mobileConnectBtn svg {
+    display: none;
+  }
+
+  /* Hide logo/image on mobile */
+  .sidebarHeader {
+    display: none;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  /* Adjust portfolio section for mobile */
+  .portfolioSection {
+    padding: 1rem 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 5;
+  }
+
+  /* Adjust main content for mobile */
+  .portfolioBox {
+    flex-direction: column;
+    border-radius: 16px;
+    border-width: 5px;
+    background: #f9f9f9;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .mainContent {
+    margin: 0.5rem;
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  /* Mobile header reorganization */
+  .contentHeader {
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-top: 0;
+  }
+
+  .headerLeft {
+    width: 100%;
+  }
+
+  .socialButtons {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+  .mobileTopNav {
+    padding: 0 1rem;
+    top: 1rem;
+  }
+
+  .mobileNavContainer {
+    padding: 0.5rem 1rem;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+  }
+
+  .mobileNavItem {
+    font-size: 13px;
+    padding: 0.5rem 1rem;
+  }
+
+  .mobileConnectBtn {
+    font-size: 13px;
+    padding: 0.5rem 1rem;
+    border-left: none;
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+  .mobileNavContainer {
+    flex-direction: column;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+  }
+
+  .mobileNavTabs {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .mobileNavItem {
+    width: 100%;
+    text-align: center;
   }
 }

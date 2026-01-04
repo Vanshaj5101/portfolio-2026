@@ -56,7 +56,26 @@ export default function DashboardSection() {
     // Wait a moment for the opacity transition, then scroll
     setTimeout(() => {
       if (sectionRef.current) {
-        sectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Get the scroll indicator element to find where portfolioBox starts
+        const scrollIndicator = sectionRef.current.querySelector(`.${dashboardStyles.scrollIndicator}`);
+
+        if (scrollIndicator) {
+          // Get the position of the scroll indicator (which is where portfolioBox starts after it)
+          const indicatorRect = scrollIndicator.getBoundingClientRect();
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+          // Calculate the target scroll position (where the indicator is + its height + gap)
+          const targetPosition = indicatorRect.bottom + scrollTop;
+
+          // Smooth scroll to that position
+          window.scrollTo({
+            top: targetPosition, // Subtract 20px for the gap between indicator and box
+            behavior: 'smooth'
+          });
+        } else {
+          // Fallback to original behavior
+          sectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
     }, 300);
   };

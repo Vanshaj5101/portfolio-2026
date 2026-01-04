@@ -98,7 +98,7 @@ export default function ExperienceView() {
               </div>
 
               {/* Skills */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
                 <SectionTitle>SKILLS USED</SectionTitle>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                   {exp.skills.map((skill, index) => (
@@ -124,7 +124,7 @@ export default function ExperienceView() {
           display: 'flex',
           flexDirection: 'column',
           paddingTop: '2rem',
-          paddingLeft: '0.5rem'
+          // paddingLeft: '0.5rem'
         }}>
           <h3 style={{
             fontFamily: "'PP Nikkei Journal', 'Courier New', monospace",

@@ -41,12 +41,8 @@ export default function ProfileView() {
 
       <div className={dashboardStyles.journeySection}>
         <div className={dashboardStyles.journeyHeader}>
-          <h2 className={dashboardStyles.journeyTitle}>JOURNEY</h2>
+          <h2 className={dashboardStyles.journeyTitle}>JOURNEY AT GLANCE</h2>
           <div className={dashboardStyles.journeyLegend}>
-            <div className={dashboardStyles.legendItem}>
-              <div className={`${dashboardStyles.legendDot} ${dashboardStyles.legendExperience}`}></div>
-              <span>Experience</span>
-            </div>
           </div>
         </div>
           <GanttChart />

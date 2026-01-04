@@ -3,13 +3,13 @@
   position: relative;
   width: 100%;
   max-width: 1620px;
-  height: 1119px;
+  min-height: 100vh;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: clamp(1rem, 3vh, 2rem) 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 20px;
   opacity: 1;
   z-index: 10;
@@ -26,7 +26,7 @@
 .portfolioBox {
   width: 100%;
   max-width: 1620px;
-  height: 1029px;
+  height: clamp(700px, 90vh, 1029px);
   background-color: #f2f2f2;
   border-radius: 24px;
   opacity: 1;
@@ -560,11 +560,11 @@
 .skillsScroller {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
   overflow-y: auto;
-  max-height: 70vh;
+  max-height: 60vh;
   padding-right: 0.5rem;
-  padding-bottom:2rem
+  padding-bottom:3rem
 }
 
 .skillsScroller::-webkit-scrollbar {
@@ -590,7 +590,7 @@
   background-color: #FFFFFF;
   border: 1px solid rgba(220, 220, 220, 0.6);
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -631,8 +631,8 @@
   font-size: 16px;
   color: rgba(2, 20, 43, 0.4);
   margin: 0;
-  line-height: 1.25;
-  letter-spacing: 0.02rem;
+  line-height: 1.15;
+  letter-spacing: 0.01rem;
 }
 
 /* Projects Section */
@@ -644,11 +644,11 @@
 .projectsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
   overflow-y: auto;
-  max-height: 70vh;
-  padding-right: 1rem;
-  padding-bottom: 2rem
+  max-height: 60vh;
+  /* padding-right: 1rem; */
+  padding-bottom: 3rem
 }
 
 .projectsGrid::-webkit-scrollbar {
@@ -712,7 +712,7 @@
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.5rem;
   flex: 1;
 }
 
@@ -722,7 +722,7 @@
   color: #02142B;
   margin: 0;
   line-height: 1.3;
-  letter-spacing: 0.02rem;
+  letter-spacing: 0.04rem;
 }
 
 .projectDescription {
@@ -731,7 +731,7 @@
   font-weight: 400;
   color: rgba(2, 20, 43, 0.6);
   margin: 0;
-  line-height: 135%;
+  line-height: 1.25;
   flex: 1;
   letter-spacing: 0.02rem;
 }
@@ -749,7 +749,7 @@
 
 .experienceContainer {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   height: 100%;
 }
 
@@ -757,8 +757,8 @@
 .experienceContent {
   flex: 1;
   overflow-y: auto;
-  max-height: 70vh;
-  padding-right: 0.5rem;
+  max-height: 65vh;
+  /* padding-right: 0.2rem; */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   padding-bottom: 2rem;
@@ -777,7 +777,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .experienceCard:hover {
@@ -967,9 +967,35 @@
 }
 
 /* Responsive Design */
+/* Laptop screens (common range: 1024px - 1440px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .portfolioSection {
+    padding: clamp(1rem, 2vh, 1.5rem) 32px;
+  }
+
+  .portfolioBox {
+    height: clamp(650px, 85vh, 900px);
+  }
+
+  /* Adjust internal content max-heights for laptops */
+  .skillsScroller {
+    max-height: 55vh;
+  }
+
+  .projectsGrid {
+    max-height: 55vh;
+  }
+
+  .experienceContent {
+    max-height: 55vh;
+  }
+}
+
+/* Tablet and smaller laptops */
 @media (max-width: 1024px) {
   .portfolioSection {
     z-index: 5;
+    padding: 1rem 32px;
   }
 
   .sidebar {
@@ -978,7 +1004,13 @@
 
   .portfolioBox {
     max-width: 100%;
-    height: clamp(750px, calc(100vh - 200px), 1000px);
+    height: clamp(700px, 85vh, 950px);
+  }
+
+  .skillsScroller,
+  .projectsGrid,
+  .experienceContent {
+    max-height: 50vh;
   }
 }
 
@@ -994,14 +1026,14 @@
 }
 
 /* Large Desktop - Fluid scaling with max constraints */
-@media (min-width: 1280px) {
+@media (min-width: 1440px) {
   .portfolioSection {
-    padding: 0.5rem 5rem 4rem;
+    padding: clamp(1.5rem, 3vh, 2.5rem) 5rem;
   }
 
   .portfolioBox {
-    max-width: clamp(1200px, 90vw, 1800px);
-    height: clamp(830px, calc(100vh - 250px), 1200px);
+    max-width: clamp(1200px, 90vw, 1620px);
+    height: clamp(850px, 90vh, 1029px);
   }
 }
 

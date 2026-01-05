@@ -71,8 +71,17 @@ export default function GanttChart() {
       }
       if (barsContainerRef.current) {
         const height = barsContainerRef.current.offsetHeight;
-        // Distribute bars evenly across the full height
-        const spacing = height / ganttData.length;
+
+        // Calculate year label height (font-size + padding)
+        // yearLabel has font-size: 11px and padding: 0.5rem (8px) top and bottom
+        // Total: ~27px, but we'll use 40px to account for spacing
+        const yearLabelHeight = 40;
+
+        // Subtract year label height from available height
+        const availableHeight = height - yearLabelHeight;
+
+        // Distribute bars evenly across the available height (excluding year labels)
+        const spacing = availableHeight / ganttData.length;
         setBarSpacing(spacing);
       }
     };
@@ -123,6 +132,22 @@ export default function GanttChart() {
       <div className={styles.ganttWrapper} ref={containerRef}>
         {/* Gantt bars */}
         <div className={styles.barsContainer} ref={barsContainerRef}>
+          {/* Year reference lines */}
+          {yearMarkers.map((year) => {
+            const position = calculateYearPosition(year);
+
+            return (
+              <div
+                key={year}
+                className={styles.yearLine}
+                style={{ left: `${position}%` }}
+              >
+                <div className={styles.yearLabel}>{year}</div>
+              </div>
+            );
+          })}
+
+          {/* Gantt bars and labels */}
           {ganttData.map((item, index) => {
             const leftPosition = calculatePosition(item.startDate);
             const rightPosition = calculatePosition(item.endDate);
@@ -163,27 +188,6 @@ export default function GanttChart() {
                     {formatDateRange(item.startDate, item.endDate)}
                   </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* X-axis */}
-        <div className={styles.xAxis}>
-          <div className={styles.axisLine} />
-
-          {/* Year markers */}
-          {yearMarkers.map((year) => {
-            const position = calculateYearPosition(year);
-
-            return (
-              <div
-                key={year}
-                className={styles.yearMarker}
-                style={{ left: `${position}%` }}
-              >
-                <div className={styles.yearTick} />
-                <div className={styles.yearLabel}>{year}</div>
               </div>
             );
           })}

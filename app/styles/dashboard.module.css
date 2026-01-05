@@ -1,11 +1,18 @@
-/* Portfolio Section - Main container (Second Container) */
+/* ===================================
+   PORTFOLIO DASHBOARD STYLES
+   =================================== */
+
+/* ===================================
+   1. MAIN CONTAINERS
+   =================================== */
+
+/* Portfolio Section - Second container with vertical centering */
 .portfolioSection {
   position: relative;
   width: 100%;
-  max-width: 1620px;
   min-height: 100vh;
   margin: 0 auto;
-  padding: clamp(1rem, 3vh, 2rem) 32px;
+  padding: 5vh 5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,16 +24,16 @@
   transition: gap 0.3s ease;
 }
 
-/* Portfolio Section when scroll indicator is hidden */
+/* Portfolio section state when scroll indicator is hidden */
 .portfolioSectionNoScroll {
   gap: 0;
 }
 
-/* Portfolio Box - Dashboard container */
+/* Portfolio Box - Main dashboard container */
 .portfolioBox {
   width: 100%;
   max-width: 1620px;
-  height: clamp(700px, 90vh, 1029px);
+  height: 90vh;
   background-color: #f2f2f2;
   border-radius: 24px;
   opacity: 1;
@@ -35,7 +42,10 @@
   overflow: hidden;
 }
 
-/* Scroll Indicator */
+/* ===================================
+   2. SCROLL INDICATOR
+   =================================== */
+
 .scrollIndicator {
   display: flex;
   flex-direction: column;
@@ -76,20 +86,25 @@
   }
 }
 
+/* ===================================
+   3. SIDEBAR NAVIGATION
+   =================================== */
+
 /* Sidebar - Left navigation panel */
 .sidebar {
-  width: 13vw; /* 250px equivalent as viewport width percentage */
-  min-width: 250px; /* Minimum width to maintain readability */
+  width: 17vw;
+  min-width: 0px;
+  max-width: 250px;
   background-color: transparent;
   padding: 2rem 1rem 1rem;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  height: 100%; /* Fill parent height */
-  min-height: 0; /* Allow flexbox to work properly */
+  height: 100%;
+  min-height: 0;
 }
 
-/* Sidebar Header */
+/* Sidebar header with logo */
 .sidebarHeader {
   display: flex;
   align-items: center;
@@ -98,7 +113,7 @@
   margin-bottom: 4rem;
 }
 
-/* Dashboard Logo */
+/* Dashboard logo icon */
 .logo {
   width: 42px;
   height: 42px;
@@ -113,7 +128,7 @@
   font-weight: 600;
 }
 
-/* Logo Text - Name next to logo */
+/* Logo text - Name next to logo */
 .logoText {
   font-family: 'PP Nikkei Journal', system-ui, sans-serif;
   font-size: 24px;
@@ -122,7 +137,7 @@
   letter-spacing: 0.02rem;
 }
 
-/* Sidebar Navigation - Menu items container */
+/* Sidebar navigation menu container */
 .navigation {
   display: flex;
   flex-direction: column;
@@ -130,7 +145,7 @@
   flex: 1;
 }
 
-/* Sidebar Navigation Item */
+/* Sidebar navigation item button */
 .navItem {
   display: flex;
   align-items: center;
@@ -147,7 +162,7 @@
   border-radius: 6px;
   transition: all 0.2s ease;
   letter-spacing: 0.02rem;
-  height: auto; /* Hug content */
+  height: auto;
 }
 
 .navItem svg {
@@ -161,38 +176,47 @@
   color: #02142B;
 }
 
-/* Active Navigation Item */
+/* Active navigation item state */
 .navItemActive {
   color: #02142B;
   background-color: rgba(0, 0, 0, 0.1);
-  /* margin-left: -0.25rem; */
-  /* padding-left: 0.75rem; */
 }
 
-/* Main Content Wrapper - Parent container with padding */
+/* ===================================
+   4. MAIN CONTENT AREA
+   =================================== */
+
+/* Main content wrapper - Parent container with padding */
 .mainContentWrapper {
   flex: 1;
-  padding: 16px 16px 16px 0; /* top right bottom left - no padding on left where it meets sidebar */
+  padding: 16px 16px 16px 0;
   min-height: 0;
+  min-width: 0; /* Critical for flex shrinking */
   height: 100%;
   display: flex;
 }
 
-/* Main Content Area - Right panel */
+/* Main content area - Right panel */
 .mainContent {
   flex: 1;
   background-color: #FFFFFF;
   padding: 1.5rem;
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  min-height: 0; /* Allow flexbox to work properly */
-  height: 100%; /* Fill available height */
-  overflow: hidden; /* No scrolling - content should fit */
+  min-height: 0;
+  min-width: 0; /* Critical for flex shrinking */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
-/* Content Header - Top section with greeting */
+/* ===================================
+   5. CONTENT HEADER
+   =================================== */
+
+/* Content header - Top section with greeting */
 .contentHeader {
   display: flex;
   justify-content: space-between;
@@ -200,7 +224,7 @@
   margin-bottom: 2rem;
 }
 
-/* Header Left - Greeting and section title */
+/* Header left - Greeting and section title */
 .headerLeft {
   display: flex;
   flex-direction: column;
@@ -208,7 +232,7 @@
   gap: 0.75rem;
 }
 
-/* Personalized Greeting */
+/* Personalized greeting */
 .contentHeader .greeting {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   font-size: 30px;
@@ -218,7 +242,7 @@
   line-height: 1;
 }
 
-/* Section Title - SUMMARY, SKILLS, etc */
+/* Section title - SUMMARY, SKILLS, etc */
 .sectionTitle {
   font-family: 'PP Nikkei Journal', 'Courier New', monospace;
   font-size: 14px;
@@ -227,7 +251,7 @@
   letter-spacing: var(--pp-nikkei-letter-spacing);
 }
 
-/* Social Buttons - Header right icons */
+/* Social buttons container - Header right */
 .socialButtons {
   display: flex;
   gap: 0.75rem;
@@ -235,7 +259,7 @@
   padding-top: 0.125rem;
 }
 
-/* Social Button Icon */
+/* Social button icon */
 .socialButton {
   width: 40px;
   height: 40px;
@@ -260,18 +284,24 @@
   flex-shrink: 0;
 }
 
-/* KPI Grid - Layout for KPI cards */
+/* ===================================
+   6. SUMMARY VIEW COMPONENTS
+   =================================== */
+
+/* KPI grid - 4 column grid for KPI cards */
 .kpiGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   margin: 1rem 0rem 0rem;
+  width: 100%;
+  min-width: 0;
 }
 
-/* Journey Section - Gantt chart container */
+/* Journey section - Gantt chart container */
 .journeySection {
   margin-top: 1rem;
-  padding: 2rem 2rem 0.5rem;
+  padding: 1rem;
   background-color: #FFFFFF;
   border-radius: 12px;
   border: 1px solid rgba(220, 220, 220, 0.6);
@@ -279,18 +309,20 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
+  width: 100%;
+  min-width: 0;
 }
 
 .journeySection:hover {
   border: 1px solid rgba(2, 20, 43, 0.3);
 }
 
-/* Journey Header */
+/* Journey header */
 .journeyHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .journeyTitle {
@@ -303,7 +335,7 @@
   letter-spacing: var(--chivo-mono-letter-spacing);
 }
 
-/* Journey Legend */
+/* Journey legend */
 .journeyLegend {
   display: flex;
   gap: 2rem;
@@ -335,7 +367,7 @@
   background-color: rgba(0, 0, 0, 1);
 }
 
-/* Gantt Chart - Timeline visualization */
+/* Gantt chart - Timeline visualization */
 .ganttChart {
   position: relative;
   padding: 0.5rem 0;
@@ -374,7 +406,7 @@
   border-radius: 4px;
 }
 
-/* Gantt Footer - Year labels */
+/* Gantt footer - Year labels */
 .ganttFooter {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -394,7 +426,7 @@
   letter-spacing: var(--chivo-mono-letter-spacing);
 }
 
-/* Gantt Bars - Timeline bars for education/experience */
+/* Gantt bars - Timeline bars for education/experience */
 .ganttBarEducation,
 .ganttBarExperience {
   position: absolute;
@@ -470,7 +502,7 @@
   visibility: visible;
 }
 
-/* Gantt Tooltip - Hover details */
+/* Gantt tooltip - Hover details */
 .ganttTooltip {
   position: absolute;
   bottom: calc(100% + 12px);
@@ -526,7 +558,7 @@
   letter-spacing: var(--chivo-mono-letter-spacing);
 }
 
-/* Gantt Bar Pattern - Current position indicator */
+/* Gantt bar pattern - Current position indicator */
 .ganttBarPattern {
   position: absolute;
   top: 0;
@@ -543,28 +575,43 @@
   z-index: 1;
 }
 
-/* Skills Section */
+/* ===================================
+   7. SKILLS VIEW COMPONENTS
+   =================================== */
+
+/* Skills section container */
 .skillsSection {
   margin-top: 1rem;
+  flex: 1; /* Allow section to fill remaining vertical space */
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* Critical for flex shrinking */
 }
 
-/* Skills Filter Buttons Container */
+/* Skills filter buttons container */
 .skillsFilters {
   display: flex;
   gap: 0.75rem;
   margin-bottom: 2rem;
   flex-wrap: wrap;
+  flex-shrink: 0; /* Don't shrink filters */
 }
 
-/* Skills Scroller - Grid container */
+/* Skills scroller - 4 column grid container */
 .skillsScroller {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   overflow-y: auto;
-  max-height: 60vh;
+  /* max-height removed - let flexbox calculate available height */
+  flex: 1; /* Fill remaining vertical space */
+  width: 100%;
+  min-width: 0;
+  min-height: 0; /* Critical for flex shrinking */
+  height: 100%; /* Force grid to respect flex height */
+  align-content: start; /* Align grid items to top */
   padding-right: 0.5rem;
-  padding-bottom:3rem
+  padding-bottom: 3rem;
 }
 
 .skillsScroller::-webkit-scrollbar {
@@ -585,7 +632,7 @@
   background: rgba(2, 20, 43, 0.3);
 }
 
-/* Skill Card */
+/* Skill card */
 .skillCard {
   background-color: #FFFFFF;
   border: 1px solid rgba(220, 220, 220, 0.6);
@@ -635,20 +682,31 @@
   letter-spacing: 0.01rem;
 }
 
-/* Projects Section */
+/* ===================================
+   8. PROJECTS VIEW COMPONENTS
+   =================================== */
+
+/* Projects section container */
 .projectsSection {
   margin-top: 1rem;
+  flex: 1; /* Allow section to fill remaining vertical space */
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* Critical for flex shrinking */
 }
 
-/* Projects Grid */
+/* Projects grid - 2 column grid */
 .projectsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: min-content; /* Ensure rows size to content */
   gap: 1rem;
   overflow-y: auto;
-  max-height: 60vh;
-  /* padding-right: 1rem; */
-  padding-bottom: 3rem
+  overflow-x: hidden;
+  /* Use flex for flexible height that works with grid */
+  flex: 1 1 0; /* Flex-grow, flex-shrink, flex-basis */
+  min-width: 0;
+  padding-bottom: 3rem;
 }
 
 .projectsGrid::-webkit-scrollbar {
@@ -669,7 +727,7 @@
   background: rgba(2, 20, 43, 0.3);
 }
 
-/* Project Card */
+/* Project card */
 .projectCard {
   background-color: #ffffff;
   border: 1px solid rgba(220, 220, 220, 0.6);
@@ -712,7 +770,7 @@
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
   flex: 1;
 }
 
@@ -742,33 +800,49 @@
   gap: 0.5rem;
 }
 
-/* Experience Section */
+/* ===================================
+   9. EXPERIENCE VIEW COMPONENTS
+   =================================== */
+
+/* Experience section container */
 .experienceSection {
   margin-top: 1rem;
+  width: 100%;
+  min-width: 0;
+  flex: 1; /* Allow section to fill remaining vertical space */
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* Critical for flex shrinking */
 }
 
+/* Experience container - Flex container for content + navigation */
 .experienceContainer {
   display: flex;
   gap: 1rem;
-  height: 100%;
+  flex: 1; /* Fill available height from parent */
+  width: 100%;
+  min-width: 0;
+  min-height: 0; /* Critical for flex shrinking */
 }
 
-/* Experience Scroller - Main content area */
+/* Experience content scroller - Main scrollable area */
 .experienceContent {
   flex: 1;
   overflow-y: auto;
-  max-height: 65vh;
-  /* padding-right: 0.2rem; */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  /* max-height removed - let flexbox calculate available height */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   padding-bottom: 2rem;
+  width: 100%;
+  min-width: 0;
+  min-height: 0; /* Critical for flex shrinking */
 }
 
 .experienceContent::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
-/* Experience Card */
+/* Experience card */
 .experienceCard {
   background-color: #FFFFFF;
   border: 1px solid rgba(220, 220, 220, 0.6);
@@ -781,10 +855,10 @@
 }
 
 .experienceCard:hover {
-    border: 1px solid rgba(2, 20, 43, 0.3);
+  border: 1px solid rgba(2, 20, 43, 0.3);
 }
 
-/* Experience Card Header */
+/* Experience card header */
 .expHeader {
   display: flex;
   gap: 1.5rem;
@@ -848,7 +922,91 @@
   font-weight: 400;
 }
 
-/* Footer Container - Third Container */
+/* Experience navigation - Right sidebar with progress indicator */
+.expNavigation {
+  width: 200px;
+  min-width: 140px;
+  max-width: 200px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+}
+
+.expNavTitle {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(2, 20, 43, 0.6);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.expNavContent {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.expProgressIndicator {
+  width: 3px;
+  flex-shrink: 0;
+  display: flex;
+  position: relative;
+}
+
+.expProgressBackground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(2, 20, 43, 0.1);
+  border-radius: 2px;
+}
+
+.expProgressActive {
+  position: absolute;
+  width: 100%;
+  background-color: #02142B;
+  border-radius: 2px;
+  transition: top 0.3s ease;
+}
+
+.expNavList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.expNavButton {
+  font-family: 'PP Nikkei Journal', 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: all 0.2s ease;
+  letter-spacing: 0.05rem;
+  line-height: 1.3;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.expNavButton.active {
+  color: #02142B;
+}
+
+.expNavButton:not(.active) {
+  color: rgba(2, 20, 43, 0.4);
+}
+
+/* ===================================
+   10. FOOTER COMPONENTS
+   =================================== */
+
+/* Footer container - Third container */
 .footerContainer {
   position: relative;
   width: 100%;
@@ -862,7 +1020,7 @@
   box-sizing: border-box;
 }
 
-/* Footer Image Container - Full width with centered image */
+/* Footer image container */
 .footerImageContainer {
   width: 100%;
   display: flex;
@@ -871,7 +1029,7 @@
   overflow: hidden;
 }
 
-/* Footer Section */
+/* Footer section */
 .footer {
   display: flex;
   justify-content: center;
@@ -888,7 +1046,7 @@
   object-fit: contain;
 }
 
-/* Contact Section */
+/* Contact section */
 .contactSection {
   position: relative;
   display: flex;
@@ -953,7 +1111,7 @@
   font-weight: 400;
 }
 
-/* Radial Glow Effect */
+/* Radial glow effect */
 .radialGlow {
   position: absolute;
   bottom: 0;
@@ -966,113 +1124,95 @@
   filter: blur(40px);
 }
 
-/* Responsive Design */
-/* Laptop screens (common range: 1024px - 1440px) */
-@media (min-width: 1024px) and (max-width: 1439px) {
-  .portfolioSection {
-    padding: clamp(1rem, 2vh, 1.5rem) 32px;
-  }
-
-  .portfolioBox {
-    height: clamp(650px, 85vh, 900px);
-  }
-
-  /* Adjust internal content max-heights for laptops */
-  .skillsScroller {
-    max-height: 55vh;
-  }
-
-  .projectsGrid {
-    max-height: 55vh;
-  }
-
-  .experienceContent {
-    max-height: 55vh;
-  }
-}
-
-/* Tablet and smaller laptops */
-@media (max-width: 1024px) {
-  .portfolioSection {
-    z-index: 5;
-    padding: 1rem 32px;
-  }
-
-  .sidebar {
-    width: 240px;
-  }
-
-  .portfolioBox {
-    max-width: 100%;
-    height: clamp(700px, 85vh, 950px);
-  }
-
-  .skillsScroller,
-  .projectsGrid,
-  .experienceContent {
-    max-height: 50vh;
-  }
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-  }
-
-  .portfolioBox {
-    height: auto;
-    min-height: 600px;
-  }
-}
-
-/* Large Desktop - Fluid scaling with max constraints */
-@media (min-width: 1440px) {
-  .portfolioSection {
-    padding: clamp(1.5rem, 3vh, 2.5rem) 5rem;
-  }
-
-  .portfolioBox {
-    max-width: clamp(1200px, 90vw, 1620px);
-    height: clamp(850px, 90vh, 1029px);
-  }
-}
-
-/* Ultra-wide screens - Maximum constraints */
-@media (min-width: 1920px) {
-  .portfolioSection {
-    padding: 2rem 10rem 10rem;
-  }
-
-  .portfolioBox {
-    max-width: 1800px;
-    height: clamp(900px, calc(100vh - 250px), 1200px);
-  }
-}
-
-/* Very large screens - Prevent over-stretching */
-@media (min-width: 2560px) {
-  .portfolioBox {
-    max-width: 2000px;
-    height: clamp(1000px, calc(100vh - 300px), 1400px);
-  }
-}
-
 /* ===================================
-   MOBILE HORIZONTAL NAVBAR
+   11. MOBILE HORIZONTAL NAVBAR
    =================================== */
 
-/* Mobile Top Navbar - Hidden by default */
+/* Mobile top navbar - Hidden by default, shown on tablets/mobile */
 .mobileTopNav {
   display: none;
 }
 
-/* Mobile Navigation Styles */
-@media (max-width: 1023px) {
-  /* Hide sidebar, show mobile nav */
+/* ===================================
+   12. RESPONSIVE BREAKPOINTS
+   =================================== */
+
+/* Laptop / Small Desktop: 1025px - 1279px */
+@media (min-width: 1025px) and (max-width: 1279px) {
+  /* Adjust dashboard height */
+  .portfolioBox {
+    height: 84vh;
+  }
+
+  /* Adjust sidebar width */
+  .sidebar {
+    width: 200px;
+    max-width: 200px;
+  }
+
+  /* Reduce grid columns from 4 to 3 */
+  .skillsScroller {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+
+  /* Keep kpiGrid at 4 columns - font sizes adjusted in shared.module.css */
+  .kpiGrid {
+    gap: 0.75rem;
+  }
+
+  /* All scrollable areas now use flexbox height - no max-height needed */
+
+  /* Reduce experience navigation width */
+  .expNavigation {
+    width: 140px;
+    min-width: 140px;
+  }
+}
+
+/* Tablet (portrait): 768px - 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Adjust z-index */
+  .portfolioSection {
+    z-index: 5;
+  }
+
+  /* Adjust dashboard height */
+  .portfolioBox {
+    max-width: 100%;
+    height: 86vh;
+  }
+
+  /* Adjust sidebar width */
+  .sidebar {
+    width: 180px;
+    max-width: 180px;
+  }
+
+  /* Reduce grid columns from 4 to 2 */
+  .skillsScroller {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Keep kpiGrid at 4 columns - font sizes adjusted in shared.module.css */
+
+  /* All scrollable areas now use flexbox height - no max-height needed */
+
+  /* Reduce experience navigation width */
+  .expNavigation {
+    width: 140px;
+    min-width: 140px;
+  }
+}
+
+/* Mobile (landscape): 481px - 767px */
+@media (min-width: 481px) and (max-width: 767px) {
+  /* Hide desktop sidebar */
   .sidebar {
     display: none !important;
   }
 
+  /* Show mobile navigation */
   .mobileTopNav {
     display: flex;
     justify-content: center;
@@ -1161,7 +1301,7 @@
     display: none;
   }
 
-  /* Hide logo/image on mobile */
+  /* Hide sidebar logo/image */
   .sidebarHeader {
     display: none;
   }
@@ -1170,7 +1310,7 @@
     display: none;
   }
 
-  /* Adjust portfolio section for mobile */
+  /* Adjust portfolio section */
   .portfolioSection {
     padding: 1rem 1rem 2rem;
     display: flex;
@@ -1180,7 +1320,7 @@
     z-index: 5;
   }
 
-  /* Adjust main content for mobile */
+  /* Adjust portfolio box */
   .portfolioBox {
     flex-direction: column;
     border-radius: 16px;
@@ -1188,6 +1328,8 @@
     background: #f9f9f9;
     width: 100%;
     max-width: 100%;
+    height: 90vh;
+    min-height: 600px;
     margin: 0 auto;
     position: relative;
   }
@@ -1214,22 +1356,45 @@
     width: 100%;
     justify-content: flex-start;
   }
+
+  /* Single column grids */
+  .skillsScroller {
+    grid-template-columns: 1fr;
+  }
+
+  /* Keep kpiGrid at 4 columns - font sizes adjusted in shared.module.css */
 }
 
-/* Tablet adjustments */
-@media (max-width: 768px) {
+/* Mobile (portrait): max-width 480px */
+@media (max-width: 480px) {
+  /* Hide desktop sidebar */
+  .sidebar {
+    display: none !important;
+  }
+
+  /* Mobile navigation adjustments */
   .mobileTopNav {
+    display: flex;
     padding: 0 1rem;
     top: 1rem;
   }
 
   .mobileNavContainer {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.75rem;
+    flex-direction: column;
+    width: 100%;
+    min-width: auto;
+  }
+
+  .mobileNavTabs {
+    width: 100%;
+    flex-direction: column;
     gap: 0.25rem;
-    flex-wrap: wrap;
   }
 
   .mobileNavItem {
+    width: 100%;
+    text-align: center;
     font-size: 13px;
     padding: 0.5rem 1rem;
   }
@@ -1245,24 +1410,58 @@
     margin-top: 0.5rem;
     padding-top: 0.75rem;
   }
-}
 
-/* Small mobile adjustments */
-@media (max-width: 480px) {
-  .mobileNavContainer {
+  /* Hide sidebar elements */
+  .sidebarHeader,
+  .logo {
+    display: none;
+  }
+
+  /* Portfolio adjustments */
+  .portfolioSection {
+    padding: 1rem 1rem 2rem;
+    z-index: 5;
+  }
+
+  .portfolioBox {
     flex-direction: column;
-    padding: 0.5rem 0.75rem;
+    border-radius: 16px;
+    background: #f9f9f9;
+    width: 100%;
+    height: 90vh;
+    min-height: 600px;
+  }
+
+  .mainContent {
+    margin: 0.5rem;
+    padding: 1.5rem;
+  }
+
+  /* Content header */
+  .contentHeader {
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .headerLeft {
     width: 100%;
   }
 
-  .mobileNavTabs {
+  .socialButtons {
     width: 100%;
-    flex-direction: column;
-    gap: 0.25rem;
+    justify-content: flex-start;
   }
 
-  .mobileNavItem {
-    width: 100%;
-    text-align: center;
+  /* Single column grids */
+  .skillsScroller {
+    grid-template-columns: 1fr;
+  }
+
+  /* Keep kpiGrid at 4 columns - font sizes adjusted in shared.module.css */
+
+  /* Hide experience navigation on small mobile */
+  .expNavigation {
+    display: none;
   }
 }

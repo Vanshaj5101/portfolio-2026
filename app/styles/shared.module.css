@@ -6,7 +6,7 @@
 .kpiCard {
   background-color: #FFFFFF;
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -154,17 +154,20 @@
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
-  .kpiCard {
-    padding: 1.25rem;
-  }
-
+@media (max-width: 1279px) {
+  /* Reduce KPI font sizes for all responsive breakpoints to keep 4 columns */
   .kpiValue {
-    font-size: 28px;
+    font-size: 36px;
   }
 
   .kpiDescription {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .kpiCard {
+    padding: 1.25rem;
   }
 
   .skillChip {
@@ -181,13 +184,5 @@
 @media (max-width: 480px) {
   .kpiCard {
     padding: 1rem;
-  }
-
-  .kpiValue {
-    font-size: 24px;
-  }
-
-  .kpiDescription {
-    font-size: 11px;
   }
 }

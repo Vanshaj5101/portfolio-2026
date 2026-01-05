@@ -3,51 +3,60 @@
   width: 100%;
   height: 100%;
   padding: 0;
-  overflow: visible;
-  min-height: 340px;
+  overflow: hidden;
+  /* min-height removed - let flexbox calculate available height */
   background-color: transparent;
-  flex: 1;
+  flex: 1; /* Fill available space in journeySection */
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* Critical for flex shrinking */
 }
 
 .ganttWrapper {
   position: relative;
   width: 100%;
-  height: 100%;
-  min-height: 320px;
-  padding: 0;
+  /* min-height removed - let flexbox calculate available height */
+  padding: 0rem 2rem 0rem 0.5rem;
   background-color: transparent;
   display: flex;
   flex-direction: column;
+  flex: 1; /* Fill available space in ganttContainer */
+  min-height: 0; /* Critical for flex shrinking */
 }
 
 /* Bars Container */
 .barsContainer {
   position: relative;
   width: 100%;
-  flex: 1;
+  flex: 1; /* Fill remaining vertical space */
   background-color: transparent;
-  height: 100%;
+  min-height: 0; /* Critical for flex shrinking */
+  /* padding: 0 2rem; Add padding to prevent year labels from being cut off */
+  box-sizing: border-box;
 }
 
 .barWrapper {
   position: absolute;
   width: 100%;
-  height: 50px;
+  /* height set dynamically via inline style */
   left: 0;
   display: flex;
-  align-items: center;
+  align-items: start
+  ;
 }
 
 /* Bar Styles */
 .bar {
   position: absolute;
-  height: 36px;
+  height: 30%; /* Use percentage of barWrapper height */
+  max-height: 36px; /* Cap maximum height */
   border-radius: 12px;
   transition: all 0.2s ease;
   z-index: 2;
-  top: 40%;
-  transform: translateY(-60%);
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
   opacity: 1;
+  min-width: 20px; /* Ensure bars have minimum visible width */
 }
 
 .bar:hover {
@@ -66,8 +75,8 @@
 /* Label Styles */
 .label {
   position: absolute;
-  top: 40%;
-  transform: translateY(25px);
+  top: 35%;
+  /* transform: translateY(calc(35% + 8px)); Position below bar */
   white-space: nowrap;
   pointer-events: none;
   z-index: 1;
@@ -78,14 +87,14 @@
 
 .labelTitle {
   font-family: 'PP Nikkei Journal', 'Courier New', monospace;
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: 0.02rem;
   line-height: 1.45;
 }
 
 .labelDate {
   font-family: var(--font-chivo-mono), 'Courier New', monospace;
-  font-size: 12px;
+  font-size: 10px;
   opacity: 0.7;
   letter-spacing: 0.01rem;
   line-height: 1;
@@ -110,55 +119,41 @@
   opacity: 0.7 !important;
 }
 
-/* X-Axis */
-.xAxis {
-  position: relative;
-  width: 100%;
-  left: 0;
-  height: 40px;
-  margin-top: 1rem;
-  /* margin-bottom: 0.5rem; */
-  flex-shrink: 0;
-}
-
-.axisLine {
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: rgba(2, 20, 43, 0.15);
-  top: 0;
-}
-
-/* Year Markers */
-.yearMarker {
+/* Year Reference Lines - Vertical lines spanning full height */
+.yearLine {
   position: absolute;
   top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: rgba(2, 20, 43, 0.1);
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.yearTick {
-  width: 2px;
-  height: 8px;
-  background-color: rgba(2, 20, 43, 0.25);
+  justify-content: flex-end;
+  pointer-events: none;
+  z-index: 1; /* Ensure lines are below bars */
 }
 
 .yearLabel {
-  font-size: 12px;
-  font-weight: 600;
-  color: rgba(2, 20, 43, 0.6);
-  text-align: center;
-  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(2, 20, 43, 0.5);
+  text-align: start;
+  padding: 0.5rem 0;
   font-family: var(--font-chivo-mono), 'Courier New', monospace;
-  letter-spacing: var(--chivo-mono-letter-spacing);
+  /* letter-spacing: 0.05rem; */
+  background-color: transparent;
+  min-width: 40px; /* Ensure label has minimum width */
+  transform: translateX(5%); /* Center label on the line */
+  white-space: nowrap; /* Prevent label from wrapping */
 }
 
 /* Responsive Behavior */
 @media (max-width: 768px) {
+  /* barsContainer uses flexbox height - no min-height needed */
+
   .barsContainer {
-    min-height: 220px;
+    padding: 0 1rem; /* Reduce padding on smaller screens */
   }
 
   .labelTitle {
@@ -170,17 +165,25 @@
   }
 
   .yearLabel {
-    font-size: 11px;
+    font-size: 10px;
+    padding: 0.4rem 0;
+  }
+
+  .bar {
+    max-height: 30px;
+    min-width: 15px;
   }
 }
 
 @media (max-width: 480px) {
+  /* barsContainer uses flexbox height - no min-height needed */
+
   .barsContainer {
-    min-height: 200px;
+    padding: 0 0.75rem; /* Further reduce padding on mobile */
   }
 
   .labelTitle {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .labelDate {
@@ -188,10 +191,13 @@
   }
 
   .yearLabel {
-    font-size: 10px;
+    font-size: 9px;
+    padding: 0.3rem 0;
   }
 
   .bar {
-    height: 32px;
+    max-height: 28px;
+    min-width: 12px;
+    border-radius: 8px;
   }
 }

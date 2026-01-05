@@ -10,6 +10,12 @@
   display: flex;
   flex-direction: column;
   min-height: 0; /* Critical for flex shrinking */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.ganttContainer::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .ganttWrapper {

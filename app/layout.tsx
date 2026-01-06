@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Chivo_Mono, Work_Sans } from "next/font/google";
 import "./globals.css";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,6 +51,9 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/images/fav.png" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${chivoMono.variable} ${workSans.variable}`}>
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
         {children}
       </body>
     </html>

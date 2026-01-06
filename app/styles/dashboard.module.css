@@ -1340,7 +1340,7 @@
   /* Adjust z-index */
   .portfolioSection {
     z-index: 5;
-    padding: 5vh 3vw;
+    padding: 0vh 3vw;
   }
 
   /* Restructure portfolioBox to vertical layout */

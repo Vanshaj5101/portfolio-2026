@@ -154,16 +154,33 @@
   white-space: nowrap; /* Prevent label from wrapping */
 }
 
-/* Responsive Behavior */
-@media (max-width: 768px) {
-  /* barsContainer uses flexbox height - no min-height needed */
+/* ===================================
+   RESPONSIVE BREAKPOINTS
+   =================================== */
 
+/* Small laptops/desktops: 1025px - 1279px */
+@media (max-width: 1279px) and (min-width: 1025px) {
+  .labelTitle {
+    font-size: 11px;
+  }
+
+  .labelDate {
+    font-size: 9px;
+  }
+
+  .yearLabel {
+    font-size: 10px;
+  }
+}
+
+/* Tablet: 768px - 1024px */
+@media (max-width: 1024px) and (min-width: 768px) {
   .barsContainer {
-    padding: 0 1rem; /* Reduce padding on smaller screens */
+    padding: 0 1rem;
   }
 
   .labelTitle {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .labelDate {
@@ -176,24 +193,23 @@
   }
 
   .bar {
-    max-height: 30px;
-    min-width: 15px;
+    max-height: 32px;
+    min-width: 18px;
   }
 }
 
-@media (max-width: 480px) {
-  /* barsContainer uses flexbox height - no min-height needed */
-
+/* Mobile: 390px - 767px */
+@media (max-width: 767px) and (min-width: 390px) {
   .barsContainer {
-    padding: 0 0.75rem; /* Further reduce padding on mobile */
+    padding: 0 0.75rem;
   }
 
   .labelTitle {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .labelDate {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .yearLabel {
@@ -206,4 +222,5 @@
     min-width: 12px;
     border-radius: 8px;
   }
+
 }

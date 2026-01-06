@@ -86,7 +86,7 @@ export default function ExperienceView() {
               </div>
 
               {/* KPIs */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.5rem' }}>
+              <div className={dashboardStyles.expKpiGrid}>
                 {exp.kpis.map((kpi, index) => (
                   <KPICard
                     key={index}

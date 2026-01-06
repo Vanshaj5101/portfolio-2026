@@ -102,38 +102,44 @@ export default function DashboardSection() {
         {/* Mobile Top Navbar - Inside dashboard */}
         <div className={dashboardStyles.mobileTopNav}>
           <div className={dashboardStyles.mobileNavContainer}>
-            <button
-              onClick={() => setActiveSection('Profile')}
-              className={`${dashboardStyles.mobileNavItem} ${
-                activeSection === 'Profile' ? dashboardStyles.active : ''
-              }`}
-            >
-              Profile
-            </button>
-            <button
-              onClick={() => setActiveSection('Experience')}
-              className={`${dashboardStyles.mobileNavItem} ${
-                activeSection === 'Experience' ? dashboardStyles.active : ''
-              }`}
-            >
-              Experience
-            </button>
-            <button
-              onClick={() => setActiveSection('Projects')}
-              className={`${dashboardStyles.mobileNavItem} ${
-                activeSection === 'Projects' ? dashboardStyles.active : ''
-              }`}
-            >
-              Projects
-            </button>
-            <button
-              onClick={() => setActiveSection('Skills')}
-              className={`${dashboardStyles.mobileNavItem} ${
-                activeSection === 'Skills' ? dashboardStyles.active : ''
-              }`}
-            >
-              Skills
-            </button>
+            <div className={dashboardStyles.mobileNavTabs}>
+              <button
+                onClick={() => setActiveSection('Profile')}
+                className={`${dashboardStyles.mobileNavTab} ${
+                  activeSection === 'Profile' ? dashboardStyles.active : ''
+                }`}
+              >
+                <User size={24} strokeWidth={activeSection === 'Profile' ? 2 : 1.5} />
+                <span>Profile</span>
+              </button>
+              <button
+                onClick={() => setActiveSection('Experience')}
+                className={`${dashboardStyles.mobileNavTab} ${
+                  activeSection === 'Experience' ? dashboardStyles.active : ''
+                }`}
+              >
+                <Briefcase size={24} strokeWidth={activeSection === 'Experience' ? 2 : 1.5} />
+                <span>Experience</span>
+              </button>
+              <button
+                onClick={() => setActiveSection('Projects')}
+                className={`${dashboardStyles.mobileNavTab} ${
+                  activeSection === 'Projects' ? dashboardStyles.active : ''
+                }`}
+              >
+                <FolderOpen size={24} strokeWidth={activeSection === 'Projects' ? 2 : 1.5} />
+                <span>Projects</span>
+              </button>
+              <button
+                onClick={() => setActiveSection('Skills')}
+                className={`${dashboardStyles.mobileNavTab} ${
+                  activeSection === 'Skills' ? dashboardStyles.active : ''
+                }`}
+              >
+                <Sparkles size={24} strokeWidth={activeSection === 'Skills' ? 2 : 1.5} />
+                <span>Skills</span>
+              </button>
+            </div>
           </div>
         </div>
         <div className={dashboardStyles.sidebar}>

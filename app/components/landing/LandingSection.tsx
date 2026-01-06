@@ -36,7 +36,9 @@ export default function LandingSection() {
       }}
     >
       <div className={styles.content}>
-        <p className={styles.greeting}>HEY, I&apos;M VANSHAJ GUPTA</p>
+        <p className={styles.greeting}>
+          HEY, I&apos;M <span className={styles.greetingBreak}></span>VANSHAJ GUPTA
+        </p>
         <h1 className={styles.headline}>
           A scrappy <span className={styles.highlight}>data engineer</span> obsessed with turning<br />
           <span className={styles.highlight}>chaotic, messy data into business insights.</span>

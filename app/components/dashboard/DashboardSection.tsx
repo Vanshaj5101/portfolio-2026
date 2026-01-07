@@ -200,9 +200,10 @@ export default function DashboardSection() {
             <div className={dashboardStyles.contentHeader}>
             <div className={dashboardStyles.headerLeft}>
               <h2 className={dashboardStyles.greeting}>
-                <span style={{ opacity: 0.4 }}>{greetingParts.text}</span>
+                {/* <span style={{ opacity: 0.4 }}>{greetingParts.text}</span>
                 {greetingParts.city && <span style={{ color: '#02142B' }}>{greetingParts.city}</span>}
-                <span style={{ opacity: 1.0 }}>{greetingParts.punctuation}</span>
+                <span style={{ opacity: 1.0 }}>{greetingParts.punctuation}</span> */}
+                <span style={{ opacity: 0.4 }}>Welcome To My Portfolio!</span>
               </h2>
               <span className={dashboardStyles.sectionTitle}>
                 {activeSection === 'Profile' && 'PROFILE'}

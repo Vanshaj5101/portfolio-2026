@@ -20,12 +20,26 @@ const ganttData: GanttItem[] = [
   //   endDate: '2023-06-30'
   // },
   {
-    id: 'intern',
+    id: 'analyst',
     title: 'Data Engineer',
+    type: 'work',
+    startDate: '2025-06-01',
+    endDate: 'present'
+  },
+  {
+    id: 'fulltime',
+    title: 'Data Engineer Intern',
+    type: 'work',
+    startDate: '2024-01-01',
+    endDate: '2025-06-01'
+  },
+  {
+    id: 'intern',
+    title: 'Data Analyst Intern',
     type: 'work',
     startDate: '2023-02-01',
     endDate: '2023-04-30'
-  },
+  }
   // {
   //   id: 'masters',
   //   title: "MCS Computer Science",
@@ -33,20 +47,6 @@ const ganttData: GanttItem[] = [
   //   startDate: '2023-08-01',
   //   endDate: '2025-05-31'
   // },
-  {
-    id: 'fulltime',
-    title: 'Data Engineer',
-    type: 'work',
-    startDate: '2024-01-01',
-    endDate: '2025-06-01'
-  },
-  {
-    id: 'analyst',
-    title: 'Business and Data Analyst 2',
-    type: 'work',
-    startDate: '2025-06-01',
-    endDate: 'present'
-  }
 ];
 
 export default function GanttChart() {

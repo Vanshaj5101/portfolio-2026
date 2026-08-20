@@ -1,35 +1,13 @@
 import dashboardStyles from '../../styles/dashboard.module.css';
 import GanttChart from '../GanttChart';
 import KPICard from '../shared/KPICard';
-
-const kpiData = [
-  {
-    title: 'Automation',
-    value: '7+',
-    description: 'ETL Pipelines and Workflows Engineered'
-  },
-  {
-    title: 'Dashboards',
-    value: '12+',
-    description: 'Data-Driven Dashboards Deployed'
-  },
-  {
-    title: 'Efficiency',
-    value: '30+',
-    description: 'Hours Reclaimed Weekly'
-  },
-  {
-    title: 'Scale',
-    value: '500K+',
-    description: 'Records Processed Across Industries'
-  }
-];
+import data from '../../../data/data.json';
 
 export default function ProfileView() {
   return (
     <>
       <div className={dashboardStyles.kpiGrid}>
-        {kpiData.map((kpi, index) => (
+        {data.kpis.map((kpi, index) => (
           <KPICard
             key={index}
             title={kpi.title}

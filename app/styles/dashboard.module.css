@@ -1086,7 +1086,15 @@
   cursor: pointer;
 }
 
-.socialIcon svg {
+.socialIcon {
+  color: white;
+}
+
+.socialIcon svg[fill="none"] {
+  fill: none;
+}
+
+.socialIcon svg:not([fill="none"]) {
   fill: white;
 }
 

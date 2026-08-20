@@ -40,7 +40,7 @@ export default function LandingSection() {
           HEY, I&apos;M <span className={styles.greetingBreak}></span>VANSHAJ GUPTA
         </p>
         <h1 className={styles.headline}>
-          A scrappy <span className={styles.highlight}>data engineer</span> obsessed with turning<br />
+          A scrappy <span className={styles.highlight}>Software & Data engineer</span> obsessed with turning<br />
           <span className={styles.highlight}>chaotic, messy data into business insights.</span>
         </h1>
 

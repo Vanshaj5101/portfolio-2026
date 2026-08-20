@@ -1,4 +1,26 @@
 {
+  "kpis": [
+    {
+      "title": "Automation",
+      "value": "7+",
+      "description": "ETL Workflows Engineered"
+    },
+    {
+      "title": "Dashboards",
+      "value": "12+",
+      "description": "Dashboards Deployed"
+    },
+    {
+      "title": "Efficiency",
+      "value": "30+",
+      "description": "Hours Reclaimed"
+    },
+    {
+      "title": "Scale",
+      "value": "500K+",
+      "description": "Records Processed"
+    }
+  ],
   "skills": [
     {
       "id": 1,
@@ -198,7 +220,7 @@
   "experience": [
     {
       "id": 1,
-      "role": "Business and Data Analyst II",
+      "role": "Data Engineer",
       "company": "Arizona State University, Learning Enterprise",
       "location": "Tempe, Arizona",
       "period": "Jun 2025 - Present",
@@ -206,39 +228,41 @@
       "image": "/images/asu.png",
       "kpis": [
         {
-          "label": "Time Savings",
-          "value": "30+",
-          "description": "Hours Saved Per Term"
+          "label": "AI Adoption",
+          "value": "150+",
+          "description": "Non-technical Staff Trained"
         },
         {
-          "label": "Invoice Accuracy",
-          "value": "75%",
-          "description": "Reduction in Invoice Errors"
+          "label": "Time Savings",
+          "value": "100+",
+          "description": "Hours Saved Quarterly"
         },
         {
           "label": "Automation",
-          "value": "4+",
-          "description": "Dashboards Powered by Automated ETL Pipelines"
+          "value": "10+",
+          "description": "ETL Pipelines Automated"
         }
       ],
       "description": [
-        "Automated feedback data processing for 60+ courses by designing an ETL pipeline with Apache Airflow, Python and Google Cloud to ingest API data into BigQuery, saving the design team 30+ hours per term",
-        "Collaborated with 7+ clients to improve revenue reporting by developing end-to-end Alteryx workflow, reducing invoice errors by 75% and manual reporting efforts by 95%",
-        "Led data architecture design by creating materialized views and data models in BigQuery using SQL, enabling 4+ Looker Studio dashboards that improved business intelligence reporting and decision-making"
+        "Engineered a daily Python ETL pipeline to process responses across surveys, using AWS Lambda, S3 and Github Actions CI/CD, centralizing data to identify UX gaps, improving CSAT from 3.2 to 4.8 across products",
+        "Built a unified data layer using SQL data models in BigQuery, integrating 300K+ records from a GCS data lake and GA4 to track conversion rate and revenue attribution across organic and paid channels for a new product launch",
+        "Designed a Tableau dashboard for course and revenue analytics, building SQL data models in AWS Redshift, giving 5+ teams and leadership visibility into OKRs and reducing ad hoc data requests by 30%",
+        "Led Agentic AI adoption for 150+ non-technical staff, introducing Claude and MCP integrations like JIRA, Google Calendar, Airtable, to automate repetitive operational tasks, eliminating manual overhead across teams"
       ],
       "skills": [
         "Python",
         "Apache Airflow",
         "BigQuery",
-        "Looker Studio",
+        "AWS",
         "SQL",
         "Alteryx",
-        "Google Cloud"
+        "Google Cloud",
+        "AI"
       ]
     },
     {
       "id": 2,
-      "role": "Data Engineer",
+      "role": "Data Engineer Intern",
       "company": "Arizona State University, Learning Enterprise",
       "location": "Tempe, Arizona",
       "period": "Jan 2024 - Jun 2025",
@@ -246,27 +270,25 @@
       "image": "/images/asu.png",
       "kpis": [
         {
-          "label": "Data Modeling",
-          "value": "300K+",
-          "description": "Salesforce Records Processed"
-        },
-        {
           "label": "Dashboards",
-          "value": "12+",
+          "value": "8+",
           "description": "Tableau & Looker Dashboards"
         },
         {
           "label": "Efficiency",
-          "value": "65%",
-          "description": "Reduction in Data Requests"
+          "value": "75%",
+          "description": "Data Requests Reduced"
+        },
+        {
+          "label": "Data Modeling",
+          "value": "300K+",
+          "description": "Salesforce Records Processed"
         }
       ],
       "description": [
-        "Performed data modeling on 300K+ Salesforce records in AWS Redshift using Airflow and Python, automating weekly pipelines that reduced operational cost and produced 4+ customized files to support team OKR reporting",
-        "Enabled self-service analytics for 7+ cross-functional teams by building 12+ Tableau and Looker Studio dashboards with automated refresh schedules and interactive data visualizations, decreasing monthly data team requests by 65%",
-        "Contributed to data architecture by migrating 8+ database tables from Star Schema to Relational Schema in AWS Redshift",
-        "Improved data quality by developing Python and SQL validation scripts on AWS Redshift and PostgreSQL, reducing incorrect insights and system failures by 70%, while strengthening data governance through code reviews and schema documentation",
-        "Accelerated monthly and quarterly reporting cycles by automating 30+ business intelligence reports across Salesforce, Excel, and Google Sheets, providing stakeholders with timely actionable insights to guide business decisions"
+        "Engineered an ETL pipeline in Python and Airflow to process transaction data in AWS Redshift, reducing a 5 hour manual invoicing process to 10 minutes for 10+ clients",
+        "Developed SQL driven monitoring system to automate QA for tables in AWS Redshift and PostgreSQL, partnering with engineering teams to document and resolve issues in Jira, improving data accuracy to 95%",
+        "Built 5+ Tableau dashboards and 30+ automated Excel and Google Sheets reports, replacing manual reporting and giving leadership consistent visibility into OKRs across products"
       ],
       "skills": [
         "Python",
@@ -281,7 +303,7 @@
     },
     {
       "id": 3,
-      "role": "Data Engineer Intern",
+      "role": "Data Analyst Intern",
       "company": "GCS Medical College, Hospital and Research Centre",
       "location": "Gujarat, India",
       "period": "Feb 2023 - Apr 2023",
@@ -322,7 +344,7 @@
   "timeline": [
     {
       "id": 1,
-      "role": "Business and Data Analyst II",
+      "role": "Data Engineer",
       "company": "Arizona State University, Learning Enterprise",
       "location": "Tempe, Arizona",
       "startDate": "2025-06",
@@ -335,7 +357,7 @@
     },
     {
       "id": 2,
-      "role": "Data Engineer",
+      "role": "Data Engineer Intern",
       "company": "Arizona State University, Learning Enterprise",
       "location": "Tempe, Arizona",
       "startDate": "2024-01",
@@ -361,7 +383,7 @@
     },
     {
       "id": 4,
-      "role": "Data Engineer",
+      "role": "Data Analyst Intern",
       "company": "GCS Medical College, Hospital and Research Centre",
       "location": "Gujarat, India",
       "startDate": "2023-02",

@@ -219,6 +219,7 @@ export default function DashboardSection() {
                 rel="noopener noreferrer"
                 className={dashboardStyles.socialButton}
                 aria-label="LinkedIn"
+                title="LinkedIn"
               >
                 <FaLinkedin size={20} />
               </a>
@@ -228,6 +229,7 @@ export default function DashboardSection() {
                 rel="noopener noreferrer"
                 className={dashboardStyles.socialButton}
                 aria-label="Github"
+                title="Github"
               >
                 <FaGithub size={20} />
               </a>
@@ -237,6 +239,7 @@ export default function DashboardSection() {
                 rel="noopener noreferrer"
                 className={dashboardStyles.socialButton}
                 aria-label="Tableau"
+                title="Tableau"
               >
                 <SiTableau size={20} />
               </a>
@@ -246,6 +249,7 @@ export default function DashboardSection() {
                 rel="noopener noreferrer"
                 className={dashboardStyles.socialButton}
                 aria-label="Resume"
+                title="Resume"
               >
                 <FileText size={20} strokeWidth={1.5} />
               </a>
@@ -253,6 +257,7 @@ export default function DashboardSection() {
                 href="mailto:gupta.vanshaj05@gmail.com"
                 className={dashboardStyles.socialButton}
                 aria-label="Email"
+                title="Email"
               >
                 <Mail size={20} strokeWidth={1.5} />
               </a>

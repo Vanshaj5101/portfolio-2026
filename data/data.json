@@ -2,22 +2,22 @@
   "kpis": [
     {
       "title": "Automation",
-      "value": "7+",
+      "value": "12+",
       "description": "ETL Workflows Engineered"
     },
     {
       "title": "Dashboards",
-      "value": "12+",
-      "description": "Dashboards Deployed"
+      "value": "10+",
+      "description": "Interactive Dashboards Built"
     },
     {
       "title": "Efficiency",
-      "value": "30+",
+      "value": "100+",
       "description": "Hours Reclaimed"
     },
     {
       "title": "Scale",
-      "value": "500K+",
+      "value": "4M+",
       "description": "Records Processed"
     }
   ],
